@@ -1,4 +1,4 @@
-package com.example.online_blood_donation_mobile_application
+package com.example.online_blood_donation_mobile_application.models
 
 data class DonatorModel(
     val donatorId : String? = null,

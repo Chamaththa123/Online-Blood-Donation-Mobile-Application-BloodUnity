@@ -1,4 +1,4 @@
-package com.example.online_blood_donation_mobile_application
+package com.example.online_blood_donation_mobile_application.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.example.online_blood_donation_mobile_application.R
+import com.example.online_blood_donation_mobile_application.models.RequestorModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 

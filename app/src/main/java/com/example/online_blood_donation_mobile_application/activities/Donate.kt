@@ -1,10 +1,12 @@
-package com.example.online_blood_donation_mobile_application
+package com.example.online_blood_donation_mobile_application.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.online_blood_donation_mobile_application.R
+import com.example.online_blood_donation_mobile_application.models.DonatorModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 

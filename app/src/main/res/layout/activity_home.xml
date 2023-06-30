@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/purple_200"
     android:backgroundTintMode="src_over"
-    tools:context=".Home">
+    tools:context=".activities.Home">
 
     <Button
-        android:id="@+id/donate"
+        android:id="@+id/dlist"
         android:layout_width="168dp"
         android:layout_height="155dp"
         android:layout_marginStart="32dp"

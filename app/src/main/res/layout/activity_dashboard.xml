@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
+    tools:context=".activities.Dashboard">
 
     <Button
-        android:id="@+id/donate"
+        android:id="@+id/dlist"
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginStart="32dp"
