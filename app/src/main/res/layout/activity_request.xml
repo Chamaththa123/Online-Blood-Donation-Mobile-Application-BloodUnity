@@ -6,6 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".Request">
 
-   
+    <EditText
+        android:id="@+id/rname"
+        android:layout_width="344dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Patient Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/rgroup"
+        android:layout_width="344dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Patient Blood Group"
+        android:inputType="textPersonName"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rnic"
+        android:layout_width="344dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Patient NIC"
+        android:inputType="textPersonName"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rphone"
+        android:layout_width="344dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Contact Person Phone"
+        android:inputType="textPersonName"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rdate"
+        android:layout_width="344dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Required Date"
+        android:inputType="textPersonName"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rsave"
+        android:layout_width="343dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input_field"
+        android:backgroundTint="#F71731"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="355dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="28dp"
+        android:text="Add Blood Request"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/back2"
+        android:layout_width="74dp"
+        android:layout_height="105dp"
+        android:layout_marginEnd="348dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562"
+        app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

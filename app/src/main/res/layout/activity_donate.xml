@@ -6,24 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Donate">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="378dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home2" />
-
     <EditText
         android:id="@+id/dname"
         android:layout_width="346dp"
         android:layout_height="79dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="268dp"
         android:layout_marginEnd="43dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -31,15 +19,16 @@
         android:inputType="textPersonName"
         android:textColorHint="#494949"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/dgroup"
         android:layout_width="344dp"
         android:layout_height="78dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="372dp"
         android:layout_marginEnd="43dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -47,16 +36,16 @@
         android:inputType="textPersonName"
         android:textColorHint="#494949"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/daddress"
         android:layout_width="346dp"
         android:layout_height="74dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="43dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -64,15 +53,16 @@
         android:inputType="textPersonName"
         android:textColorHint="#494949"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/dgroup" />
 
     <EditText
         android:id="@+id/dnumber"
         android:layout_width="347dp"
         android:layout_height="82dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -80,23 +70,23 @@
         android:inputType="textPersonName"
         android:textColorHint="#494949"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/daddress" />
 
     <Button
-        android:id="@+id/dsave"
+        android:id="@+id/rsave"
         android:layout_width="346dp"
         android:layout_height="79dp"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input_field"
         android:backgroundTint="#F71731"
         android:text="Button"
-        android:background="@drawable/input_field"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -113,6 +103,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="379dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,20 @@
         android:theme="@style/Theme.OnlineBloodDonationMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Dashboard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Login"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Request"
             android:exported="false">
             <meta-data

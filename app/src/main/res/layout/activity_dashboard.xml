@@ -4,46 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/purple_200"
-    android:backgroundTintMode="src_over"
-    tools:context=".Home">
+    tools:context=".Dashboard">
 
     <Button
         android:id="@+id/donate"
         android:layout_width="168dp"
-        android:layout_height="155dp"
+        android:layout_height="112dp"
         android:layout_marginStart="32dp"
         android:background="@drawable/input_field"
         android:backgroundTint="#FFFFFF"
-        android:text="Donate blood"
+        android:text="Blood donars details"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/request"
         android:layout_width="168dp"
-        android:layout_height="155dp"
+        android:layout_height="112dp"
         android:layout_marginEnd="28dp"
         android:background="@drawable/input_field"
         android:backgroundTint="#FFFFFF"
-        android:text="request blood"
+        android:text="blood requester details"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/donate3"
         android:layout_width="168dp"
-        android:layout_height="155dp"
+        android:layout_height="112dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/input_field"
+        android:backgroundTint="#FFFFFF"
+        android:text="blood details"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707" />
+
+    <Button
+        android:id="@+id/donate2"
+        android:layout_width="168dp"
+        android:layout_height="112dp"
         android:layout_marginEnd="28dp"
         android:background="@drawable/input_field"
         android:backgroundTint="#FFFFFF"
@@ -54,30 +68,46 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.914" />
 
     <Button
         android:id="@+id/donate4"
         android:layout_width="168dp"
-        android:layout_height="155dp"
+        android:layout_height="112dp"
         android:layout_marginStart="32dp"
         android:background="@drawable/input_field"
         android:backgroundTint="#FFFFFF"
-        android:text="Ambulance"
+        android:text="Ambulance details"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.707" />
+
+    <Button
+        android:id="@+id/donate5"
+        android:layout_width="168dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/input_field"
+        android:backgroundTint="#FFFFFF"
+        android:text="create new account"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="326dp"
         android:layout_height="47dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="59dp"
         android:text="Alpha Health Care Blood Bank"
         android:textAlignment="center"
@@ -93,14 +123,14 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="116dp"
         android:text="WELCOME"
-        android:textAlignment="gravity"
+        android:textAlignment="center"
         android:textColor="@color/purple_500"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -114,20 +144,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banner" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="40dp"
-        android:text="Tel : 011- 5852147  /  011 - 5821157"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/back"
         android:layout_width="86dp"
@@ -138,4 +154,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="195dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="248dp"
+        android:text="DashBoard"
+        android:textColor="#000000"
+        android:textSize="39sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

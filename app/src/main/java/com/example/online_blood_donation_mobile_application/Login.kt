@@ -7,22 +7,23 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
-class MainActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
-        val start = findViewById<Button>(R.id.adminlogin);
-        val login = findViewById<ImageView>(R.id.login);
+        val back3 = findViewById<ImageView>(R.id.back3)
+        val adminlogin = findViewById<Button>(R.id.adminlogin)
 
-        start.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
+        back3.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        login.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
+        adminlogin.setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
     }

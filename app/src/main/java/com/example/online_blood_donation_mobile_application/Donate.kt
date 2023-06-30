@@ -27,7 +27,7 @@ class Donate : AppCompatActivity() {
         dgroup = findViewById(R.id.dgroup)
         daddress = findViewById(R.id.daddress)
         dnumber = findViewById(R.id.dnumber)
-        dsave = findViewById(R.id.dsave)
+        dsave = findViewById(R.id.rsave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Donator")
 
