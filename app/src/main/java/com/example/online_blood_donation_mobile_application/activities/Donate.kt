@@ -1,9 +1,12 @@
 package com.example.online_blood_donation_mobile_application.activities
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.online_blood_donation_mobile_application.R
 import com.example.online_blood_donation_mobile_application.models.DonatorModel
@@ -21,10 +24,12 @@ class Donate : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donate)
 
+        val backH = findViewById<ImageView>(R.id.backH)
         dname = findViewById(R.id.dname)
         dgroup = findViewById(R.id.dgroup)
         daddress = findViewById(R.id.daddress)
@@ -32,6 +37,11 @@ class Donate : AppCompatActivity() {
         dsave = findViewById(R.id.rsave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Donator")
+
+        backH.setOnClickListener {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
 
         dsave.setOnClickListener {
             saveDonatorData()
