@@ -16,16 +16,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val start = findViewById<TextView>(R.id.start);
-        val login = findViewById<ImageView>(R.id.login);
+
 
         start.setOnClickListener {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
 
-        login.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
+
     }
 }

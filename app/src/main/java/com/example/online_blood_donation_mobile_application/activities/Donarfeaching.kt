@@ -20,7 +20,7 @@ class Donarfeaching : AppCompatActivity() {
     private lateinit var donorList: ArrayList<DonatorModel>
     private lateinit var dbRef: DatabaseReference
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donarfeaching)
@@ -53,20 +53,21 @@ class Donarfeaching : AppCompatActivity() {
                     val mAdapter = DonorAdapter(donorList)
                     donorRecyclerView.adapter = mAdapter
 
-//                    mAdapter.setOnItemClickListener(object : DonorAdapter.onItemClickListener{
-//                        override fun onItemClick(position: Int) {
-//
-//                            val intent = Intent(this@Donarfeaching, EmployeeDetailsActivity::class.java)
-//
-//                            //put extras
-//                            intent.putExtra("empId", empList[position].empId)
-//                            intent.putExtra("empName", empList[position].empName)
-//                            intent.putExtra("empAge", empList[position].empAge)
-//                            intent.putExtra("empSalary", empList[position].empSalary)
-//                            startActivity(intent)
-//                        }
-//
-//                    })
+                    mAdapter.setOnItemClickListener(object : DonorAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+
+                            val intent = Intent(this@Donarfeaching, DonarDetails::class.java)
+
+                            //put extras
+                            intent.putExtra("donatorId", donorList[position].donatorId)
+                            intent.putExtra("name", donorList[position].name)
+                            intent.putExtra("group", donorList[position].group)
+                            intent.putExtra("address", donorList[position].address)
+                            intent.putExtra("number", donorList[position].number)
+                            startActivity(intent)
+                        }
+
+                    })
 
                     donorRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE

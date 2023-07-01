@@ -8,41 +8,20 @@
     android:backgroundTint="#FFFFFF"
     tools:context=".activities.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="376dp"
-        android:layout_height="308dp"
-        android:layout_marginTop="180dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="460dp"
+        android:layout_width="243dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="424dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Alpha Health Care"
         android:textAlignment="center"
-        android:textColor="@color/purple_500"
-        android:textSize="34sp"
+        android:textColor="@color/purple_700"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/login"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_login_24" />
 
     <TextView
         android:id="@+id/start"
@@ -53,10 +32,24 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="Get Start >>"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/purple_700"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="232dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="65dp"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403"
+        app:srcCompat="@drawable/download" />
 </androidx.constraintlayout.widget.ConstraintLayout>
