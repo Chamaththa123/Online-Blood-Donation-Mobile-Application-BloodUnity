@@ -16,6 +16,7 @@ class Home : AppCompatActivity() {
 
         val donate = findViewById<Button>(R.id.donate)
         val request = findViewById<Button>(R.id.request_b)
+        val admin = findViewById<ImageView>(R.id.admin)
 
         donate.setOnClickListener {
             val intent = Intent(this, Donate::class.java)
@@ -24,6 +25,11 @@ class Home : AppCompatActivity() {
 
         request.setOnClickListener {
             val intent = Intent(this, Request::class.java)
+            startActivity(intent)
+        }
+
+        admin.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }

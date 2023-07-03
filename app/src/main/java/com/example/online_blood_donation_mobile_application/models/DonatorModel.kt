@@ -5,7 +5,8 @@ data class DonatorModel(
     val name : String? = null,
     val group : String? = null,
     val address : String? = null,
-    val number : String? = null
+    val number : String? = null,
+    val nic : String? = null
 ){
 
 }

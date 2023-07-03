@@ -11,7 +11,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginStart="32dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="Blood donars details"
         android:textColor="#FFFFFF"
@@ -27,7 +27,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginEnd="28dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="blood requester details"
         android:textColor="#FFFFFF"
@@ -43,7 +43,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginEnd="28dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="blood details"
         android:textColor="#FFFFFF"
@@ -59,7 +59,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginEnd="28dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="Donation Areas"
         android:textColor="#FFFFFF"
@@ -75,7 +75,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginStart="32dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="Ambulance details"
         android:textColor="#FFFFFF"
@@ -91,7 +91,7 @@
         android:layout_width="168dp"
         android:layout_height="112dp"
         android:layout_marginStart="32dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btn"
         android:backgroundTint="#FFFFFF"
         android:text="create new account"
         android:textColor="#FFFFFF"
@@ -119,38 +119,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="WELCOME"
-        android:textAlignment="center"
-        android:textColor="@color/purple_500"
-        android:textSize="56sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="315dp"
-        android:layout_height="114dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner" />
-
     <ImageView
         android:id="@+id/back"
         android:layout_width="86dp"
         android:layout_height="88dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
@@ -168,5 +141,14 @@
         app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="193dp"
+        android:layout_height="221dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/download" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

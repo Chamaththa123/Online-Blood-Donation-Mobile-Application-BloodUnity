@@ -20,11 +20,12 @@ class Donate : AppCompatActivity() {
     private lateinit var dgroup:EditText
     private lateinit var daddress:EditText
     private lateinit var dnumber:EditText
+    private lateinit var dnic:EditText
     private lateinit var dsave:Button
 
     private lateinit var dbRef: DatabaseReference
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint("WrongViewCast", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donate)
@@ -34,6 +35,7 @@ class Donate : AppCompatActivity() {
         dgroup = findViewById(R.id.dgroup)
         daddress = findViewById(R.id.daddress)
         dnumber = findViewById(R.id.dnumber)
+        dnic = findViewById(R.id.dnic)
         dsave = findViewById(R.id.rsave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Donator")
@@ -53,7 +55,8 @@ class Donate : AppCompatActivity() {
         val group = dgroup.text.toString()
         val address = daddress.text.toString()
         val number = dnumber.text.toString()
-        
+        val nic = dnic.text.toString()
+
         if(name.isEmpty()){
             dname.error ="Please Enter Your Name"
         }
@@ -66,10 +69,13 @@ class Donate : AppCompatActivity() {
         if(number.isEmpty()){
             dnumber.error ="Please Enter Your Contact Number"
         }
+        if(nic.isEmpty()){
+            dnic.error ="Please Enter Your NIC Number"
+        }
 
-        if(name.isNotEmpty() && group.isNotEmpty() && address.isNotEmpty() && number.isNotEmpty()){
+        if(name.isNotEmpty() && group.isNotEmpty() && address.isNotEmpty() && number.isNotEmpty() && nic.isNotEmpty()){
             val donatorId = dbRef.push().key!!
-            val donator = DonatorModel(donatorId, name, group, address, number)
+            val donator = DonatorModel(donatorId, name, group, address, number , nic)
 
             dbRef.child(donatorId).setValue(donator).addOnCompleteListener {
                 Toast.makeText(this,"Registered As Blood Donator !!! ",Toast.LENGTH_LONG).show()
@@ -78,6 +84,7 @@ class Donate : AppCompatActivity() {
                 dgroup.text.clear()
                 daddress.text.clear()
                 dnumber.text.clear()
+                dnic.text.clear()
             }.addOnFailureListener {err ->
                 Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_LONG).show()
             }

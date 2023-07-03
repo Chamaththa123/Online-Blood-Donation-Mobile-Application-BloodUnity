@@ -9,9 +9,9 @@
     <EditText
         android:id="@+id/dname"
         android:layout_width="376dp"
-        android:layout_height="79dp"
+        android:layout_height="55dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="268dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -20,16 +20,16 @@
         android:paddingLeft="25dp"
         android:textColorHint="#494949"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/dgroup"
         android:layout_width="376dp"
-        android:layout_height="78dp"
+        android:layout_height="55dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/input_field"
         android:ems="10"
@@ -40,12 +40,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dname" />
 
     <EditText
         android:id="@+id/daddress"
         android:layout_width="376dp"
-        android:layout_height="74dp"
+        android:layout_height="55dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="40dp"
@@ -60,9 +60,27 @@
         app:layout_constraintTop_toBottomOf="@+id/dgroup" />
 
     <EditText
+        android:id="@+id/dnic"
+        android:layout_width="376dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Enter Donar NIC No"
+        android:inputType="textPersonName"
+        android:paddingLeft="25dp"
+        android:textColorHint="#494949"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dnumber" />
+
+    <EditText
         android:id="@+id/dnumber"
         android:layout_width="376dp"
-        android:layout_height="82dp"
+        android:layout_height="55dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="40dp"
@@ -80,10 +98,10 @@
     <Button
         android:id="@+id/rsave"
         android:layout_width="376dp"
-        android:layout_height="79dp"
+        android:layout_height="55dp"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="69dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/input_field"
         android:backgroundTint="#F71731"
         android:text="Submit Registration Details"
