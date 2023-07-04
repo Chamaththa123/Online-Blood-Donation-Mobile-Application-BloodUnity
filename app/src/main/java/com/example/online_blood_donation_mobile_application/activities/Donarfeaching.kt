@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +26,12 @@ class Donarfeaching : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donarfeaching)
 
+        val backD = findViewById<ImageView>(R.id.imageView9)
+
+        backD.setOnClickListener {
+            val intent = Intent(this, Dashboard::class.java)
+            startActivity(intent)
+        }
         donorRecyclerView = findViewById(R.id.rvDonor)
         donorRecyclerView.layoutManager = LinearLayoutManager(this)
         donorRecyclerView.setHasFixedSize(true)

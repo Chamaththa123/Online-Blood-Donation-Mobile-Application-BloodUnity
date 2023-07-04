@@ -31,12 +31,12 @@ class Donate : AppCompatActivity() {
         setContentView(R.layout.activity_donate)
 
         val backH = findViewById<ImageView>(R.id.backH)
-        dname = findViewById(R.id.dname)
-        dgroup = findViewById(R.id.dgroup)
-        daddress = findViewById(R.id.daddress)
+        dname = findViewById(R.id.Hname)
+        dgroup = findViewById(R.id.Location)
+        daddress = findViewById(R.id.Contact)
         dnumber = findViewById(R.id.dnumber)
         dnic = findViewById(R.id.dnic)
-        dsave = findViewById(R.id.rsave)
+        dsave = findViewById(R.id.asave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Donator")
 
@@ -75,7 +75,7 @@ class Donate : AppCompatActivity() {
 
         if(name.isNotEmpty() && group.isNotEmpty() && address.isNotEmpty() && number.isNotEmpty() && nic.isNotEmpty()){
             val donatorId = dbRef.push().key!!
-            val donator = DonatorModel(donatorId, name, group, address, number , nic)
+            val donator = DonatorModel(donatorId, name, group, address, number , nic , status = "Pending")
 
             dbRef.child(donatorId).setValue(donator).addOnCompleteListener {
                 Toast.makeText(this,"Registered As Blood Donator !!! ",Toast.LENGTH_LONG).show()

@@ -34,7 +34,7 @@ class Request : AppCompatActivity() {
         rnic = findViewById(R.id.rnic)
         rphone = findViewById(R.id.rphone)
         rdate = findViewById(R.id.rdate)
-        rsave = findViewById(R.id.rsave)
+        rsave = findViewById(R.id.asave)
 
         val back2 = findViewById<ImageView>(R.id.back2)
 

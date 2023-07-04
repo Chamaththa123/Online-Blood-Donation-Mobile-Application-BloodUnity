@@ -29,6 +29,8 @@ class DonorAdapter(private val donorList: ArrayList<DonatorModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentDonor = donorList[position]
         holder.tvDonorName.text = currentDonor.name
+        holder.tvBloodGroup.text = currentDonor.group
+        holder.tv_Status.text = currentDonor.status
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +40,8 @@ class DonorAdapter(private val donorList: ArrayList<DonatorModel>) :
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
         val tvDonorName : TextView = itemView.findViewById(R.id.tvDonorName)
+        val tvBloodGroup : TextView = itemView.findViewById(R.id.tvBloodGroup)
+        val tv_Status : TextView = itemView.findViewById(R.id.tv_Status)
 
         init {
             itemView.setOnClickListener {

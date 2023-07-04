@@ -14,9 +14,15 @@ class Dashboard : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
 
         val dlist = findViewById<Button>(R.id.dlist)
+        val alist = findViewById<Button>(R.id.AllAmbulance)
 
         dlist.setOnClickListener {
             val intent = Intent(this, Donarfeaching::class.java)
+            startActivity(intent)
+        }
+
+        alist.setOnClickListener {
+            val intent = Intent(this, AmbulanceDash::class.java)
             startActivity(intent)
         }
     }
