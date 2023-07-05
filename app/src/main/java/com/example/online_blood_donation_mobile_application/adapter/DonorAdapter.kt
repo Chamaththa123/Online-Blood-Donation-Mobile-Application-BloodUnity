@@ -39,7 +39,7 @@ class DonorAdapter(private val donorList: ArrayList<DonatorModel>) :
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
-        val tvDonorName : TextView = itemView.findViewById(R.id.tvDonorName)
+        val tvDonorName : TextView = itemView.findViewById(R.id.tvDonarName)
         val tvBloodGroup : TextView = itemView.findViewById(R.id.tvBloodGroup)
         val tv_Status : TextView = itemView.findViewById(R.id.tv_Status)
 
