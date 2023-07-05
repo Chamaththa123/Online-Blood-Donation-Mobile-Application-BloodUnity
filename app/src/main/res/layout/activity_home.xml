@@ -82,7 +82,7 @@
     <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Ambulance"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="62dp"
@@ -101,7 +101,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/blood"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="236dp"
