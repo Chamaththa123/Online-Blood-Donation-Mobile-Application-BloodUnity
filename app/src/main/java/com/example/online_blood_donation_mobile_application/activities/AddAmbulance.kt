@@ -46,7 +46,7 @@ private fun saveAmbulanceData(){
         Hname.error ="Please Enter Hospital Name"
     }
     if(location.isEmpty()){
-        Location.error ="Please Enter Location Group"
+        Location.error ="Please Enter Location"
     }
     if(contact.isEmpty()){
         Contact.error ="Please Enter Contact Number"

@@ -4,7 +4,7 @@ data class AmbulanceModel(
     val ambulanceId : String? = null,
     val name : String? = null,
     val location : String? = null,
-    val Number : String? = null
+    val number : String? = null
 ){
 
 }

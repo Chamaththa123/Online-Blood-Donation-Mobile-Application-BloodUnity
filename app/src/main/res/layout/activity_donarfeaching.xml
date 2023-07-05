@@ -7,7 +7,7 @@
     tools:context=".activities.Donarfeaching">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDonor"
+        android:id="@+id/rvDonar"
         android:layout_width="390dp"
         android:layout_height="590dp"
         android:layout_marginStart="1dp"

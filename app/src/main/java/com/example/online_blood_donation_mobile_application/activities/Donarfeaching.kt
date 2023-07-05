@@ -1,6 +1,5 @@
 package com.example.online_blood_donation_mobile_application.activities
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,7 +31,7 @@ class Donarfeaching : AppCompatActivity() {
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
-        donorRecyclerView = findViewById(R.id.rvDonor)
+        donorRecyclerView = findViewById(R.id.rvDonar)
         donorRecyclerView.layoutManager = LinearLayoutManager(this)
         donorRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
