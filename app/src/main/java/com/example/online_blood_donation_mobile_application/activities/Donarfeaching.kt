@@ -70,6 +70,7 @@ class Donarfeaching : AppCompatActivity() {
                             intent.putExtra("group", donorList[position].group)
                             intent.putExtra("address", donorList[position].address)
                             intent.putExtra("number", donorList[position].number)
+                            intent.putExtra("status", donorList[position].status)
                             startActivity(intent)
                         }
 
