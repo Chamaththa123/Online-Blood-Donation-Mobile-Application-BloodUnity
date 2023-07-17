@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="314dp"
-        android:layout_height="180dp"
+        android:layout_width="299dp"
+        android:layout_height="134dp"
         android:layout_marginStart="117dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="118dp"
@@ -49,14 +49,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="106dp"
         android:text="Contact Ambulance for Emergency"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 

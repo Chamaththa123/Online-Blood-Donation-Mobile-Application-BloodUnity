@@ -139,7 +139,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/UpdateDonar"
+        android:id="@+id/updatedonar"
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:layout_marginStart="41dp"
@@ -152,7 +152,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/deleteDonar"
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:layout_marginEnd="31dp"
