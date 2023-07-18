@@ -20,6 +20,7 @@ class DonarDetails : AppCompatActivity() {
     private lateinit var tvAddress: TextView
     private lateinit var tvNumber: TextView
     private lateinit var tvStatus: TextView
+    private lateinit var tvNic: TextView
     private lateinit var updatedonar : Button
     private lateinit var deleteDonar : Button
 
@@ -50,6 +51,7 @@ class DonarDetails : AppCompatActivity() {
         tvAddress = findViewById(R.id.tvAddress)
         tvNumber = findViewById(R.id.tvNumber)
         tvStatus = findViewById(R.id.tvStatus)
+        tvNic = findViewById(R.id.tvNic)
     }
 
 
@@ -60,6 +62,7 @@ class DonarDetails : AppCompatActivity() {
         tvAddress.text = intent.getStringExtra("address")
         tvNumber.text = intent.getStringExtra("number")
         tvStatus.text = intent.getStringExtra("status")
+        tvNic.text = intent.getStringExtra("nic")
         updatedonar = findViewById(R.id.updatedonar)
         deleteDonar = findViewById(R.id.deleteDonar)
     }
@@ -93,10 +96,20 @@ class DonarDetails : AppCompatActivity() {
         mDialog.setView(mDialogView)
 
         val etStatus = mDialogView.findViewById<EditText>(R.id.etStatus)
+        val etName = mDialogView.findViewById<EditText>(R.id.etName)
+        val etGroup = mDialogView.findViewById<EditText>(R.id.etGroup)
+        val etNumber = mDialogView.findViewById<EditText>(R.id.etNumber)
+        val etAddress = mDialogView.findViewById<EditText>(R.id.etAddress)
+        val etNic = mDialogView.findViewById<EditText>(R.id.etNic)
         val btnUpdateStatus = mDialogView.findViewById<Button>(R.id.btnUpdateStatus)
         val deleteDonar = mDialogView.findViewById<Button>(R.id.deleteDonar)
 
         etStatus.setText(intent.getStringExtra("status").toString())
+        etName.setText(intent.getStringExtra("name").toString())
+        etGroup.setText(intent.getStringExtra("group").toString())
+        etNumber.setText(intent.getStringExtra("number").toString())
+        etAddress.setText(intent.getStringExtra("address").toString())
+        etNic.setText(intent.getStringExtra("nic").toString())
 
         mDialog.setTitle("Update Donar Status")
 
@@ -107,11 +120,20 @@ class DonarDetails : AppCompatActivity() {
             updateDonarStatus(
                 donatorId,
                 etStatus.text.toString(),
+                etName.text.toString(),
+                etGroup.text.toString(),
+                etNumber.text.toString(),
+                etAddress.text.toString(),
+                etNic.text.toString(),
 
                 )
             Toast.makeText(applicationContext, "Donar Status Updated", Toast.LENGTH_LONG).show()
 
-            //we are setting updated data to our textviews
+            //we are setting updated data to our textview
+            tvName.text = etName.text.toString()
+            tvGroup.text = etGroup.text.toString()
+            tvNumber.text = etNumber.text.toString()
+            tvAddress.text = etAddress.text.toString()
             tvStatus.text = etStatus.text.toString()
 
 
@@ -122,10 +144,15 @@ class DonarDetails : AppCompatActivity() {
     }
         private fun updateDonarStatus(
             id: String,
-            status: String
+            status: String,
+            name: String,
+            group: String,
+            number: String,
+            address: String,
+            nic: String
         ) {
             val dbRef = FirebaseDatabase.getInstance().getReference("Donator").child(id)
-            val empInfo = DonatorModel(id, status)
+            val empInfo = DonatorModel(id,name, group, address, number, nic, status)
             dbRef.setValue(empInfo)
         }
 

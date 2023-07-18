@@ -71,6 +71,7 @@ class Donarfeaching : AppCompatActivity() {
                             intent.putExtra("address", donorList[position].address)
                             intent.putExtra("number", donorList[position].number)
                             intent.putExtra("status", donorList[position].status)
+                            intent.putExtra("nic", donorList[position].nic)
                             startActivity(intent)
                         }
 
