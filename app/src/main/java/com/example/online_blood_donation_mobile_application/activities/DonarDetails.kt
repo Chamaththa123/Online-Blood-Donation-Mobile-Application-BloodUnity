@@ -96,11 +96,11 @@ class DonarDetails : AppCompatActivity() {
         mDialog.setView(mDialogView)
 
         val etStatus = mDialogView.findViewById<EditText>(R.id.etStatus)
-        val etName = mDialogView.findViewById<EditText>(R.id.etName)
-        val etGroup = mDialogView.findViewById<EditText>(R.id.etGroup)
-        val etNumber = mDialogView.findViewById<EditText>(R.id.etNumber)
-        val etAddress = mDialogView.findViewById<EditText>(R.id.etAddress)
-        val etNic = mDialogView.findViewById<EditText>(R.id.etNic)
+        val etName = mDialogView.findViewById<TextView>(R.id.etName)
+        val etGroup = mDialogView.findViewById<TextView>(R.id.etGroup)
+        val etNumber = mDialogView.findViewById<TextView>(R.id.etNumber)
+        val etAddress = mDialogView.findViewById<TextView>(R.id.etAddress)
+        val etNic = mDialogView.findViewById<TextView>(R.id.etNic)
         val btnUpdateStatus = mDialogView.findViewById<Button>(R.id.btnUpdateStatus)
         val deleteDonar = mDialogView.findViewById<Button>(R.id.deleteDonar)
 
