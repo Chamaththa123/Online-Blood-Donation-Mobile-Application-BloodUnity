@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    tools:context=".activities.AmbulanceDetails">
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="370dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/sddf"
+            android:layout_width="153dp"
+            android:layout_height="match_parent"
+            android:text="Hospital Name :"
+            android:textColor="#040404"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etAName"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="370dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+        <TextView
+            android:id="@+id/sds"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="6dp"
+            android:text="Location :"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etALocation"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="370dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2">
+
+        <TextView
+            android:id="@+id/gbfb"
+            android:layout_width="154dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="2dp"
+            android:text="Contact NO :"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/etANumber"
+            android:layout_width="199dp"
+            android:layout_height="match_parent"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="132dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

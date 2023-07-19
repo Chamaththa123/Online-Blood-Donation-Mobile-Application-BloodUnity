@@ -39,7 +39,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/tvLocation"
+            android:id="@+id/etALocation"
             android:layout_width="91dp"
             android:layout_height="27dp"
             android:layout_marginStart="44dp"

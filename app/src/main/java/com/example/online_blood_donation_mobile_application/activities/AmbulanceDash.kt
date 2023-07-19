@@ -69,21 +69,20 @@ class AmbulanceDash : AppCompatActivity() {
                     val mAdapter = AmbulanceAdapter(ambulanceList)
                     ambulanceRecyclerView.adapter = mAdapter
 
-//                    mAdapter.setOnItemClickListener(object : DonorAdapter.onItemClickListener{
-//                        override fun onItemClick(position: Int) {
-//
-//                            val intent = Intent(this@Donarfeaching, DonarDetails::class.java)
-//
-//                            //put extras
-//                            intent.putExtra("donatorId", donorList[position].donatorId)
-//                            intent.putExtra("name", donorList[position].name)
-//                            intent.putExtra("group", donorList[position].group)
-//                            intent.putExtra("address", donorList[position].address)
-//                            intent.putExtra("number", donorList[position].number)
-//                            startActivity(intent)
-//                        }
-//
-//                    })
+                    mAdapter.setOnItemClickListener(object : AmbulanceAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+
+                            val intent = Intent(this@AmbulanceDash, AmbulanceDetails::class.java)
+
+                            //put extras
+                            intent.putExtra("ambulanceId", ambulanceList[position].ambulanceId)
+                            intent.putExtra("name", ambulanceList[position].name)
+                            intent.putExtra("location", ambulanceList[position].location)
+                            intent.putExtra("number", ambulanceList[position].number)
+                            startActivity(intent)
+                        }
+
+                    })
 
                     ambulanceRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE

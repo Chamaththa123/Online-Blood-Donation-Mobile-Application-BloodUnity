@@ -46,10 +46,10 @@ class DonarDetails : AppCompatActivity() {
     }
 
     private fun initView() {
-        tvName = findViewById(R.id.tvName)
+        tvName = findViewById(R.id.etAName)
         tvGroup = findViewById(R.id.tvGroup)
         tvAddress = findViewById(R.id.tvAddress)
-        tvNumber = findViewById(R.id.tvNumber)
+        tvNumber = findViewById(R.id.etANumber)
         tvStatus = findViewById(R.id.tvStatus)
         tvNic = findViewById(R.id.tvNic)
     }
