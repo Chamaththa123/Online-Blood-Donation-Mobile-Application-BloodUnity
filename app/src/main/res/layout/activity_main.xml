@@ -17,7 +17,7 @@
         android:text="Alpha Health Care"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="232dp"
-        android:layout_height="218dp"
+        android:layout_width="186dp"
+        android:layout_height="174dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="65dp"
         android:textAlignment="gravity"
@@ -50,6 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
+        app:layout_constraintVertical_bias="0.448"
         app:srcCompat="@drawable/download" />
 </androidx.constraintlayout.widget.ConstraintLayout>
