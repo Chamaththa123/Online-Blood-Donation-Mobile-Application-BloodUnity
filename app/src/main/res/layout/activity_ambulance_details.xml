@@ -27,8 +27,8 @@
 
         <TextView
             android:id="@+id/etAName"
-            android:layout_width="244dp"
-            android:layout_height="32dp"
+            android:layout_width="245dp"
+            android:layout_height="match_parent"
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -55,8 +55,8 @@
 
         <TextView
             android:id="@+id/etALocation"
-            android:layout_width="242dp"
-            android:layout_height="32dp"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -82,8 +82,8 @@
 
         <TextView
             android:id="@+id/etANumber"
-            android:layout_width="199dp"
-            android:layout_height="28dp"
+            android:layout_width="203dp"
+            android:layout_height="match_parent"
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -92,24 +92,26 @@
 
     <Button
         android:id="@+id/updateambulance"
-        android:layout_width="116dp"
-        android:layout_height="59dp"
+        android:layout_width="117dp"
+        android:layout_height="66dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="#FFD813"
-        android:text="Button"
+        android:text="Update Ambulance Details"
+        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
 
     <Button
         android:id="@+id/deleteambulance"
-        android:layout_width="122dp"
-        android:layout_height="59dp"
+        android:layout_width="120dp"
+        android:layout_height="67dp"
         android:layout_marginStart="63dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="55dp"
         android:backgroundTint="#FF2633"
-        android:text="Button"
+        android:text="Delete Ambulance Details"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/updateambulance"
         app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
