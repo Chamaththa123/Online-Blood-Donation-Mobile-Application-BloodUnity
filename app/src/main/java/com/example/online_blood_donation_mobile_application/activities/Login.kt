@@ -15,13 +15,7 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val back3 = findViewById<ImageView>(R.id.back3)
         val adminlogin = findViewById<Button>(R.id.adminlogin)
-
-        back3.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         adminlogin.setOnClickListener {
             val intent = Intent(this, Dashboard::class.java)
