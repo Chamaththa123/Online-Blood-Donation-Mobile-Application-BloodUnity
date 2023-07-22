@@ -23,7 +23,8 @@
             android:layout_height="match_parent"
             android:text="Hospital Name :"
             android:textColor="#040404"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/etAName"
@@ -51,7 +52,8 @@
             android:paddingLeft="6dp"
             android:text="Location :"
             android:textColor="#0C0C0C"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/etALocation"
@@ -78,7 +80,8 @@
             android:paddingLeft="2dp"
             android:text="Contact NO :"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/etANumber"
