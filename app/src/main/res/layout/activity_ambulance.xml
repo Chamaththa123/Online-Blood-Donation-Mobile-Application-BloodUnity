@@ -8,14 +8,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAmbulance"
-        android:layout_width="381dp"
-        android:layout_height="525dp"
+        android:layout_width="377dp"
+        android:layout_height="650dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/ambulance_list" />
 
     <TextView
@@ -32,33 +35,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="299dp"
-        android:layout_height="134dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="118dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/download" />
-
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="336dp"
+        android:layout_height="53dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="106dp"
         android:text="Contact Ambulance for Emergency"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView12"
