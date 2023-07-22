@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.online_blood_donation_mobile_application.R
 import com.example.online_blood_donation_mobile_application.adapter.AmbulanceAdapter
+import com.example.online_blood_donation_mobile_application.adapter.AmbulanceAdapterII
 import com.example.online_blood_donation_mobile_application.models.AmbulanceModel
 import com.google.firebase.database.*
 
@@ -18,7 +19,7 @@ class Ambulance : AppCompatActivity() {
 
     private lateinit var ambulanceRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
-    private lateinit var ambulanceList: ArrayList<AmbulanceModel>
+    private lateinit var ambulanceListII: ArrayList<AmbulanceModel>
     private lateinit var dbRef: DatabaseReference
 
     @SuppressLint("MissingInflatedId")
@@ -37,7 +38,7 @@ class Ambulance : AppCompatActivity() {
         ambulanceRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
 
-        ambulanceList = arrayListOf<AmbulanceModel>()
+        ambulanceListII = arrayListOf<AmbulanceModel>()
 
         getAmbulanceData()
     }
@@ -50,30 +51,14 @@ class Ambulance : AppCompatActivity() {
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                ambulanceList.clear()
+                ambulanceListII.clear()
                 if (snapshot.exists()){
                     for (empSnap in snapshot.children){
                         val ambulanceData = empSnap.getValue(AmbulanceModel::class.java)
-                        ambulanceList.add(ambulanceData!!)
+                        ambulanceListII.add(ambulanceData!!)
                     }
-                    val mAdapter = AmbulanceAdapter(ambulanceList)
+                    val mAdapter = AmbulanceAdapterII(ambulanceListII)
                     ambulanceRecyclerView.adapter = mAdapter
-
-//                    mAdapter.setOnItemClickListener(object : DonorAdapter.onItemClickListener{
-//                        override fun onItemClick(position: Int) {
-//
-//                            val intent = Intent(this@Donarfeaching, DonarDetails::class.java)
-//
-//                            //put extras
-//                            intent.putExtra("donatorId", donorList[position].donatorId)
-//                            intent.putExtra("name", donorList[position].name)
-//                            intent.putExtra("group", donorList[position].group)
-//                            intent.putExtra("address", donorList[position].address)
-//                            intent.putExtra("number", donorList[position].number)
-//                            startActivity(intent)
-//                        }
-//
-//                    })
 
                     ambulanceRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE
