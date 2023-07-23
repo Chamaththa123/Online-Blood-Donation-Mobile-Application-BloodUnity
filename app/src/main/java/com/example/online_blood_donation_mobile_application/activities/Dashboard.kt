@@ -15,6 +15,7 @@ class Dashboard : AppCompatActivity() {
 
         val dlist = findViewById<Button>(R.id.dlist)
         val alist = findViewById<Button>(R.id.AllAmbulance)
+        val rlist = findViewById<Button>(R.id.request)
 
         dlist.setOnClickListener {
             val intent = Intent(this, Donarfeaching::class.java)
@@ -23,6 +24,11 @@ class Dashboard : AppCompatActivity() {
 
         alist.setOnClickListener {
             val intent = Intent(this, AmbulanceDash::class.java)
+            startActivity(intent)
+        }
+
+        rlist.setOnClickListener {
+            val intent = Intent(this, Requestfeaching::class.java)
             startActivity(intent)
         }
     }

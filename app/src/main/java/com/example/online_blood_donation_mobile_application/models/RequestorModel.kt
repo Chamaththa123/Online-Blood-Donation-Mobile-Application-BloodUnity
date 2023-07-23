@@ -6,7 +6,8 @@ data class RequestorModel(
     val rgroup : String? = null,
     val rnic : String? = null,
     val rnumber : String? = null,
-    val rdate : String? = null
+    val rdate : String? = null,
+    val status : String? = null
 ){
 
 }
