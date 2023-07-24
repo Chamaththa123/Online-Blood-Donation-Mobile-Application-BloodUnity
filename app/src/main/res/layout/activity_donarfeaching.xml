@@ -8,14 +8,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDonar"
-        android:layout_width="390dp"
-        android:layout_height="590dp"
+        android:layout_width="392dp"
+        android:layout_height="622dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
         tools:listitem="@layout/donar_list" />
 
     <TextView
@@ -36,7 +38,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="60dp"
         android:text="Blood Donor Details"
         android:textColor="#050505"
         android:textSize="28sp"
@@ -46,23 +48,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="180dp"
-        android:layout_height="169dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/download" />
-
-    <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="66dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="57dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
