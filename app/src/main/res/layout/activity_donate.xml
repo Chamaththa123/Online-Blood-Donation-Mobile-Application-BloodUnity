@@ -119,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="53dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="54dp"
         android:text="Register As Blood Donar"
         android:textColor="#0B0B0B"
@@ -131,11 +131,12 @@
 
     <ImageView
         android:id="@+id/backH"
-        android:layout_width="69dp"
-        android:layout_height="76dp"
+        android:layout_width="57dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_left_24" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
