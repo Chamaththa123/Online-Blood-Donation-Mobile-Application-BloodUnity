@@ -122,11 +122,11 @@ const styles = StyleSheet.create({
     picker: {
         width: '100%',
     },
-    show:{
-        textAlign:'right',
-        marginRight:25,
-        marginTop:10,
-        marginBottom:10
+    show: {
+        textAlign: 'right',
+        marginRight: 25,
+        marginTop: 10,
+        marginBottom: 10
     }
 });
 
