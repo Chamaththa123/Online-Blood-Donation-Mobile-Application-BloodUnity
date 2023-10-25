@@ -23,7 +23,7 @@ const Login = ({ route, navigation }) => {
         });
     }, []);
     const handleLoginPress = () => {
-        navigation.navigate('Login');
+        navigation.navigate('HomePage');
     };
 
     return (
