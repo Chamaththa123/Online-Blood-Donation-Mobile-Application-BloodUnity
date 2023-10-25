@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     image: {
-        width: '50%',
+        width: '80%',
         height: '50%',
     },
     button: {
