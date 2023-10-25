@@ -21,11 +21,11 @@ const Start = ({ route, navigation }) => {
         <View style={styles.container}>
             <Image source={MyImage} style={styles.image} />
 
-            <TouchableOpacity onPress={handleLoginPress} style={styles.button}>
+            <TouchableOpacity onPress={handleLoginPress} style={styles.buttonStyle}>
                 <Text style={styles.buttonText}>Log In</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={handleRegisterPress} style={styles.button}>
+            <TouchableOpacity onPress={handleRegisterPress} style={styles.buttonStyle}>
                 <Text style={styles.buttonText}>Create Account</Text>
             </TouchableOpacity>
         </View>
@@ -43,20 +43,26 @@ const styles = StyleSheet.create({
         width: '80%',
         height: '50%',
     },
-    button: {
-        backgroundColor: 'white',
-        padding: 15,
-        borderRadius: 20,
-        marginTop: 40,
-        borderColor: '#F76363',
-        borderWidth: 1.5,
-        width: '80%'
-    },
     buttonText: {
         color: '#FF2C2C',
         fontSize: 20,
         fontWeight: '600',
         textAlign: 'center'
+    },
+    buttonStyle: {
+        backgroundColor: 'white',
+        padding: 13,
+        borderRadius: 10,
+        width: '90%',
+        height: 60,
+        margin: 10,
+        marginLeft: 20,
+        marginBottom: 30,
+        borderColor: '#FF1515',
+        borderWidth: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white'
     },
 });
 

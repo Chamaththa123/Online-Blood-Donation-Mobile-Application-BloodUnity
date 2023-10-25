@@ -101,11 +101,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     header: {
-        fontSize: 22,
+        fontSize: 30,
         fontWeight: 'bold',
         marginTop: '10%',
         marginLeft: '5%',
         marginBottom: '8%',
+        color: '#FF1515',
     },
     scrollViewContent: {
         flexGrow: 1,
