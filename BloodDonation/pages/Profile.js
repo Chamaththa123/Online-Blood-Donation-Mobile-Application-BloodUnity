@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, FlatList } from 'react-native';
 import { firebase } from '../firebase/config';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../components/Header';
 
 const Profile = () => {
   const [name, setName] = useState({});
@@ -18,7 +19,7 @@ const Profile = () => {
       .signOut()
       .then(() => {
         console.log('Sign-out successful');
-        navigation.navigate('Home');
+        navigation.navigate('Start');
       })
       .catch((error) => {
         console.error('Sign-out error:', error);
@@ -98,6 +99,7 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
+      <Header/>
       <Text>Dashboard</Text>
       <Text>Welcome {name.firstName} {name.lastName}</Text>
 
