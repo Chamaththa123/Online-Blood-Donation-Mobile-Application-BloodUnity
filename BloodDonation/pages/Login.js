@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet, TextInput, ScrollView } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
+import {firebase} from '../firebase/config'
 import MyImage from '../assets/logo2.jpg';
 
-const Login = ({ route, navigation }) => {
+const Login = () => {
+    const navigation = useNavigation()
+    const [email,setEmail] = useState('');
+    const [password, setPassword] =useState('');
+
+    loginUser = async (email,password) =>{
+        try{
+          await firebase.auth().signInWithEmailAndPassword(email,password)
+        }catch (error){
+          alert(error.message)
+        }
+      }
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -22,9 +34,7 @@ const Login = ({ route, navigation }) => {
             title: "",
         });
     }, []);
-    const handleLoginPress = () => {
-        navigation.navigate('HomePage');
-    };
+
 
     return (
         <ScrollView contentContainerStyle={styles.container1}>
@@ -36,16 +46,22 @@ const Login = ({ route, navigation }) => {
             <TextInput
                 placeholder="Enter Email"
                 style={styles.textBoxes}
+                onChangeText={(email) => setEmail(email)}
+        autoCapitalize='none'
+        autoCorrect={false}
             />
             <Text style={styles.inputDetails}>Password</Text>
             <TextInput
                 placeholder="Enter Password" secureTextEntry={!showPassword}
                 style={styles.textBoxes}
+        value={password}
+        onChangeText={(password) => setPassword(password)}
+        autoCorrect={false}
             />
             <TouchableOpacity onPress={togglePasswordVisibility}>
                 <Text style={styles.show}>{showPassword ? 'Hide Password' : 'Show Password'}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleLoginPress} style={styles.buttonStyle}>
+            <TouchableOpacity onPress={() => loginUser(email,password)} style={styles.buttonStyle}>
                 <Text style={styles.buttonText}>Log In</Text>
             </TouchableOpacity>
         </ScrollView>
