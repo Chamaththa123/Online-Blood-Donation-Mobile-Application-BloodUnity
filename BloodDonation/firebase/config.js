@@ -1,21 +1,18 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getDatabase} from "firebase/database"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore'
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCH0qmv2dNMdXjjEabbTuKKlJ3HKWsyl4s",
-  authDomain: "test-reactnative-9bda1.firebaseapp.com",
-  databaseURL: "https://test-reactnative-9bda1-default-rtdb.firebaseio.com",
-  projectId: "test-reactnative-9bda1",
-  storageBucket: "test-reactnative-9bda1.appspot.com",
-  messagingSenderId: "673563042166",
-  appId: "1:673563042166:web:100c2101e5ada099bd9a57"
-};
+    apiKey: "AIzaSyA0YHbfC_t21isTnwA-6aZ7e2FYrcMT_Sg",
+    authDomain: "blood-donation-ac142.firebaseapp.com",
+    projectId: "blood-donation-ac142",
+    storageBucket: "blood-donation-ac142.appspot.com",
+    messagingSenderId: "385846849363",
+    appId: "1:385846849363:web:3e1863ff8404f389f9fba6"
+  };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+if(!firebase.apps.length){
+    firebase.initializeApp(firebaseConfig);
+}
 
-export const db = getDatabase(app);
+export {firebase};
