@@ -25,7 +25,7 @@ const Register = ({ navigation }) => {
     return (
         <ScrollView contentContainerStyle={styles.scrollViewContent}>
             <View style={styles.container}>
-                <Text style={styles.header}>Create Profile</Text>
+                <Text style={styles.header}>Create New Profile</Text>
                 <Text style={styles.inputDetails}>Full Name</Text>
                 <TextInput
                     placeholder="Enter Full Name"
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     header: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: 'bold',
         marginTop: '10%',
         marginLeft: '5%',
