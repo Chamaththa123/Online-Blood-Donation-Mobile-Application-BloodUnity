@@ -46,7 +46,7 @@ const Profile = () => {
      <View style={{marginTop:200}}>
      <Text>Dashboard</Text>
       <Text>
-        Welcome {name.firstName} {name.lastName}
+        Welcome {name.name} {name.number}
       </Text>
 
       <TouchableOpacity style={styles.button} onPress={handleSignOut}>
