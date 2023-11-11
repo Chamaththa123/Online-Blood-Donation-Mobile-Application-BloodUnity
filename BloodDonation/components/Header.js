@@ -1,7 +1,7 @@
 import { View, Image, StyleSheet, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
 import { firebase } from "../firebase/config";
-import MyImage from '../assets/profile.png';
+import MyImage from "../assets/profile.png";
 
 const Header = ({ title }) => {
   const [name, setName] = useState({});
@@ -33,7 +33,7 @@ const Header = ({ title }) => {
         </View>
         <View style={styles.rowContainer}>
           <View style={styles.card2}>
-          <Image source={MyImage}   style={styles.image} />
+            <Image source={MyImage} style={styles.image} />
           </View>
         </View>
       </ImageBackground>
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
   image: {
     width: 120,
     height: 120,
-    alignItems:'center'
-},
+    alignItems: "center",
+  },
   card: {
     backgroundColor: "#CB0303",
     padding: 16,
