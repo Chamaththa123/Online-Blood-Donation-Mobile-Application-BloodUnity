@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         marginLeft: '5%',
-        marginBottom: '15%',
+        marginBottom: '7%',
         color: '#FF1515',
     },header2: {
         fontSize: 31,
