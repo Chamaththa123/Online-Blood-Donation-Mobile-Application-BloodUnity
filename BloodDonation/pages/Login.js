@@ -39,8 +39,7 @@ const Login = () => {
 
     return (
         <ScrollView contentContainerStyle={styles.container1}>
-           <Image source={MyImage} style={styles.image} />
-            <Text style={styles.header}>Welcome</Text>
+            <Text style={styles.header2}>Welcome Back !</Text>
             <Text style={styles.header1}>Sign In</Text>
             <Text style={styles.inputDetails}>Email</Text>
             <TextInput
@@ -138,7 +137,13 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
     header1: {
-        fontSize: 28,
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginLeft: '5%',
+        marginBottom: '15%',
+        color: '#FF1515',
+    },header2: {
+        fontSize: 31,
         fontWeight: 'bold',
         marginLeft: '5%',
         marginBottom: '2%',
