@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, ImageBackground } from "react-native";
+import { View, Image, StyleSheet, ImageBackground, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import { firebase } from "../firebase/config";
 import MyImage from "../assets/profile.png";
@@ -28,7 +28,9 @@ const Header = ({ title }) => {
         style={styles.backgroundImage}
       >
         <View style={styles.rowContainer1}>
-          <View style={styles.card1}></View>
+          <View style={styles.card1}>
+            <Text style={styles.card1Text}>{name.Btype}</Text>
+          </View>
           <View style={styles.card3}></View>
         </View>
         <View style={styles.rowContainer}>
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     alignItems: "center",
+    marginLeft:13
   },
   card: {
     backgroundColor: "#CB0303",
@@ -82,6 +85,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#fff",
     marginRight: 10,
+  },
+  card1Text: {
+    marginLeft: 35,
+    marginTop: 38,
+    fontSize: 35,
+    color: "#fff",
   },
   card2: {
     backgroundColor: "#CB0303",
