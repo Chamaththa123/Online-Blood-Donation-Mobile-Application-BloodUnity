@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet,TextInput } from "react-native";
+import {
+  ScrollView,
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import { firebase } from "../firebase/config";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../components/Header";
@@ -8,6 +14,9 @@ import Accordion from "react-native-collapsible/Accordion";
 const Profile = () => {
   const [name, setName] = useState({});
   const [activeSections, setActiveSections] = useState([]);
+  const [activeSections2, setActiveSections2] = useState([]);
+  const [activeSections3, setActiveSections3] = useState([]);
+  const [activeSections4, setActiveSections4] = useState([]);
   const navigation = useNavigation();
 
   const handleSignOut = () => {
@@ -27,7 +36,6 @@ const Profile = () => {
   const SECTIONS = [
     {
       title: "Personal Details",
-      content: `Welcome ${name.name} ${name.number}`,
     },
   ];
 
@@ -40,10 +48,88 @@ const Profile = () => {
   const renderContent = (section) => (
     <View style={styles.content}>
       <Text>{section.content}</Text>
-      <View style={styles.card3}></View>
+      <Text style={styles.cardHeader}>Name </Text>
+      <View style={styles.card}>
+        <Text>{name.name}</Text>
+      </View>
+
+      <Text style={styles.cardHeader}>Email </Text>
+      <View style={styles.card}>
+        <Text>{name.email}</Text>
+      </View>
+
+      <Text style={styles.cardHeader}>Blood Type </Text>
+      <View style={styles.card}>
+        <Text>{name.Btype}</Text>
+      </View>
+
+      <Text style={styles.cardHeader}>Contact No </Text>
+      <View style={styles.card}>
+        <Text>{name.number}</Text>
+      </View>
       <TouchableOpacity style={styles.button} onPress={handleSignOut}>
         <Text style={styles.buttonText}>Sign Out</Text>
       </TouchableOpacity>
+    </View>
+  );
+
+  const SECTIONS2 = [
+    {
+      title: "Manage Blood Donation",
+      content: `Welcome ${name.name} ${name.number}`,
+    },
+  ];
+
+  const renderHeader2 = (section, _, isActive) => (
+    <View style={styles.header}>
+      <Text style={styles.headerText}>{section.title}</Text>
+    </View>
+  );
+
+  const renderContent2 = (section) => (
+    <View style={styles.content}>
+      <Text>{section.content}</Text>
+      <View style={styles.card}></View>
+    </View>
+  );
+
+  const SECTIONS3 = [
+    {
+      title: "Manage Blood Request",
+      content: `Welcome ${name.name} ${name.number}`,
+    },
+  ];
+
+  const renderHeader3 = (section, _, isActive) => (
+    <View style={styles.header}>
+      <Text style={styles.headerText}>{section.title}</Text>
+    </View>
+  );
+
+  const renderContent3 = (section) => (
+    <View style={styles.content}>
+      <Text>{section.content}</Text>
+      <View style={styles.card}></View>
+    </View>
+  );
+
+  const SECTIONS4 = [
+    {
+      title: "Manage Blood Donation Events",
+      content: `Welcome ${name.name} ${name.number}`,
+    },
+  ];
+
+  const renderHeader4 = (section, _, isActive) => (
+    <View style={styles.header}>
+      <Text style={styles.headerText}>{section.title}</Text>
+    </View>
+  );
+
+  const renderContent4 = (section) => (
+    <View style={styles.content}>
+      <Text>{section.content}</Text>
+      <View style={styles.card}></View>
     </View>
   );
 
@@ -61,7 +147,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
       <Text style={styles.headName}>{name.name}</Text>
       <View style={styles.accordion}>
@@ -73,7 +159,36 @@ const Profile = () => {
           onChange={setActiveSections}
         />
       </View>
-    </View>
+      <View style={styles.accordion}>
+        <Accordion
+          sections={SECTIONS2}
+          activeSections={activeSections2}
+          renderHeader={renderHeader2}
+          renderContent={renderContent2}
+          onChange={setActiveSections2}
+        />
+      </View>
+
+      <View style={styles.accordion}>
+        <Accordion
+          sections={SECTIONS3}
+          activeSections={activeSections3}
+          renderHeader={renderHeader3}
+          renderContent={renderContent3}
+          onChange={setActiveSections3}
+        />
+      </View>
+
+      <View style={styles.accordion}>
+        <Accordion
+          sections={SECTIONS4}
+          activeSections={activeSections4}
+          renderHeader={renderHeader4}
+          renderContent={renderContent4}
+          onChange={setActiveSections4}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -87,7 +202,7 @@ const styles = StyleSheet.create({
     marginTop: 90,
     textAlign: "center",
     fontSize: 20,
-    fontWeight:'600'
+    fontWeight: "600",
   },
   header: {
     backgroundColor: "#fff",
@@ -101,15 +216,16 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
-  card3: {
-    backgroundColor: "#CB0303",
-    borderRadius: 10,
-    shadowRadius: 4,
-    // elevation: 5,
-    height: 120,
+  cardHeader: {
+    marginBottom: 10,
+    marginTop: 10,
+  },
+  card: {
+    padding: 16,
+    width: "100%",
+    borderRadius: 7,
+    borderColor: "#FF1515",
     borderWidth: 1,
-    borderColor: "#fff",
-    marginLeft: 90,
   },
   input: {
     width: "80%",
@@ -131,7 +247,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   accordion: {
-    marginTop: 40,
+    marginTop: 20,
     margin: 10,
     borderWidth: 0.8,
     borderColor: "#FF1515",
