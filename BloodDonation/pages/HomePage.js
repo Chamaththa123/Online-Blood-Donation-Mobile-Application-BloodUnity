@@ -10,10 +10,12 @@ import {
 } from "react-native";
 import Accordion from "react-native-collapsible/Accordion";
 import MyImage from "../assets/profile.png";
-
 import image3 from "../assets/image4.jpg";
+import { useNavigation } from "@react-navigation/native";
 
 const HomePage = ({ route, navigation }) => {
+  // const navigation = useNavigation();
+
   const [name, setName] = useState({});
   const [activeSections, setActiveSections] = useState([]);
 
@@ -32,6 +34,11 @@ const HomePage = ({ route, navigation }) => {
       });
   }, []);
 
+  const handleImageClick = () => {
+    // Navigate to another screen when the image is clicked
+    navigation.navigate("Profile");
+  };
+
   const SECTIONS = [
     {
       title: "Benifits of Blood Donation",
@@ -40,8 +47,8 @@ const HomePage = ({ route, navigation }) => {
   ];
 
   const renderHeader = (section, _, isActive) => (
-    <View style={styles.header}>
-      <Text style={styles.headerText}>{section.title}</Text>
+    <View style={styles.headerACC}>
+      <Text style={styles.headerTextACC}>{section.title}</Text>
     </View>
   );
 
@@ -74,17 +81,20 @@ const HomePage = ({ route, navigation }) => {
       </Text>
     </View>
   );
-
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContent}>
+    <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <Text style={styles.HeaderHello}>Hello,</Text>
-          <Image source={MyImage} style={styles.image} />
+            <Image source={MyImage} style={styles.image} />
         </View>
         <Text style={styles.Headername}>{name.name}</Text>
         <Text style={styles.header1}>Donate Blood Save Life !</Text>
         <Image source={image3} style={styles.image3} />
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Text style={styles.buttonText} onPress={handleImageClick}>Find Blood Donar</Text>
+        </TouchableOpacity>
+
         <View style={styles.accordion}>
           <Accordion
             sections={SECTIONS}
@@ -94,8 +104,41 @@ const HomePage = ({ route, navigation }) => {
             onChange={setActiveSections}
           />
         </View>
-        <Image source={image3} style={styles.image3} />
-        <Image source={image3} style={styles.image3} />
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt,
+          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
+          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
+          ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed ut perspiciatis, unde omnis iste
+          natus error sit voluptatem accusantium doloremque laudantium, totam
+          rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam
+          voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt,
+          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
+          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
+          ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed ut perspiciatis, unde omnis iste
+          natus error sit voluptatem accusantium doloremque laudantium, totam
+          rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam
+          voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt,
+          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
+          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
+          ratione voluptatem sequi nesciunt.
+        </Text>
       </View>
     </ScrollView>
   );
@@ -104,7 +147,17 @@ const HomePage = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#fff",
+    padding: 10,
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+  scrollView: {
+    flex: 1,
+    width: "100%",
   },
   headerContainer: {
     flexDirection: "row",
@@ -125,39 +178,28 @@ const styles = StyleSheet.create({
     marginTop: -5,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 55,
+    height: 55,
     position: "absolute",
     right: 1,
     top: 0,
     margin: 10,
   },
-  image3: {
-    width: "95%",
-    height: "28%",
-    margin: 10,
-    borderRadius: 20,
+  text: {
+    fontSize: 16,
+    lineHeight: 24,
   },
-  buttonText: {
-    color: "#FF2C2C",
-    fontSize: 20,
-    fontWeight: "600",
-    textAlign: "center",
-  },
-  buttonStyle: {
-    backgroundColor: "white",
-    padding: 13,
-    borderRadius: 10,
-    width: "90%",
-    height: 60,
-    margin: 10,
-    marginLeft: 20,
-    marginBottom: 30,
+  accordion: {
+    marginTop: 20,
+    borderWidth: 0.8,
     borderColor: "#FF1515",
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    color: "white",
+    borderRadius: 10,
+    padding: 10,
+  },
+  image3: {
+    width: "100%",
+    height: "19%",
+    borderRadius: 20,
   },
   header1: {
     fontSize: 25,
@@ -165,14 +207,11 @@ const styles = StyleSheet.create({
     marginTop: 30,
     color: "#FF1515",
   },
-  scrollViewContent: {
-    flexGrow: 1,
-  },
-  header: {
+  headerACC: {
     backgroundColor: "#fff",
     padding: 5,
   },
-  headerText: {
+  headerTextACC: {
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -180,13 +219,20 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     backgroundColor: "#fff",
   },
-  accordion: {
-    marginTop: 20,
-    margin: 10,
-    borderWidth: 0.8,
-    borderColor: "#FF1515",
+  buttonText: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  buttonStyle: {
+    backgroundColor: "white",
     borderRadius: 10,
-    padding: 10,
+    width: "100%",
+    marginTop: 30,
+    borderColor: "#FF1515",
+    borderWidth: 1,
+    justifyContent: "center",
+    color: "white",
+    padding: 15,
   },
 });
 
