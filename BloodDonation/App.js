@@ -6,6 +6,7 @@ import Start from './pages/Start';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import HomePage from './pages/HomePage';
 
 
 
@@ -32,13 +33,15 @@ const App = () => {
           <Stack.Screen name='Start' component={Start} />
           <Stack.Screen name='Login' component={Login} />
           <Stack.Screen name='Register' component={Register} />
+          <Stack.Screen name='Home' component={HomePage} />
           <Stack.Screen name='Profile' component={Profile} />
         </Stack.Navigator>
     ) 
   }
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Profile' component={Profile} options={{ headerShown: false }} />
+          <Stack.Screen name='Home' component={HomePage} />
+      <Stack.Screen name='Profile' component={Profile} />
     </Stack.Navigator>
 ) 
 };

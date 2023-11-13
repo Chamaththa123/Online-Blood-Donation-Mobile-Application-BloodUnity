@@ -1,20 +1,39 @@
-import React, { useEffect } from 'react'; // Import useEffect from 'react'
+import React, { useEffect, useState } from "react";
+import { firebase } from "../firebase/config";
 import { View, Image, Text, TouchableOpacity, StyleSheet ,ScrollView } from 'react-native';
 
 import MyImage from '../assets/home.jpg';
 
 const HomePage = ({ route, navigation }) => {
 
-    useEffect(() => {
-        navigation.setOptions({
-            headerShown: false,
-        });
-    }, []);
+    // useEffect(() => {
+    //     navigation.setOptions({
+    //         headerShown: false,
+    //     });
+    // }, []);
+
+    const [name, setName] = useState({});
+
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          setName(snapshot.data());
+        } else {
+          console.log("user doesn't exist");
+        }
+      });
+  }, []);
+
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
     <View  style={styles.container}>
-      
-            <Image source={MyImage} style={styles.image} />
+      <Text style={styles.Headername}>Hello,</Text>
+      <Text style={styles.Headername}>{name.name}</Text>
             <Text style={styles.header}>Donate Blood Save Life !</Text>
             
         </View>
@@ -26,6 +45,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
+    },
+    Headername: {
+        margin:20,
+        fontSize:18
     },
     image: {
         width: '100%',
@@ -54,7 +77,7 @@ const styles = StyleSheet.create({
     },
     header: {
       fontSize: 25,
-      marginTop: '-5%',
+      marginTop: '5%',
       marginLeft: '5%',
       marginBottom: '2%',
   },
