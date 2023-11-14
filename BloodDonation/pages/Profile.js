@@ -10,6 +10,7 @@ import { firebase } from "../firebase/config";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../components/Header";
 import Accordion from "react-native-collapsible/Accordion";
+import Donar from "../components/Donar";
 
 const Profile = () => {
   const [name, setName] = useState({});
@@ -76,7 +77,6 @@ const Profile = () => {
   const SECTIONS2 = [
     {
       title: "Manage Blood Donation",
-      content: `Welcome ${name.name} ${name.number}`,
     },
   ];
 
@@ -87,10 +87,8 @@ const Profile = () => {
   );
 
   const renderContent2 = (section) => (
-    <View style={styles.content}>
-      <Text>{section.content}</Text>
-      <View style={styles.card}></View>
-    </View>
+    <Donar/>
+    
   );
 
   const SECTIONS3 = [
