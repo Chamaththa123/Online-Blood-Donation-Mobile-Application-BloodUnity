@@ -34,49 +34,10 @@ const Profile = () => {
       });
   };
 
-  const SECTIONS = [
-    {
-      title: "Personal Details",
-    },
-  ];
-
-  const renderHeader = (section, _, isActive) => (
-    <View style={styles.header}>
-      <Text style={styles.headerText}>{section.title}</Text>
-    </View>
-  );
-
-  const renderContent = (section) => (
-    <View style={styles.content}>
-      <Text>{section.content}</Text>
-      <Text style={styles.cardHeader}>Name </Text>
-      <View style={styles.card}>
-        <Text>{name.name}</Text>
-      </View>
-
-      <Text style={styles.cardHeader}>Email </Text>
-      <View style={styles.card}>
-        <Text>{name.email}</Text>
-      </View>
-
-      <Text style={styles.cardHeader}>Blood Type </Text>
-      <View style={styles.card}>
-        <Text>{name.Btype}</Text>
-      </View>
-
-      <Text style={styles.cardHeader}>Contact No </Text>
-      <View style={styles.card}>
-        <Text>{name.number}</Text>
-      </View>
-      <TouchableOpacity style={styles.button} onPress={handleSignOut}>
-        <Text style={styles.buttonText}>Sign Out</Text>
-      </TouchableOpacity>
-    </View>
-  );
 
   const SECTIONS2 = [
     {
-      title: "Manage Blood Donation",
+      title: "Manage Blood Donar Details",
     },
   ];
 
@@ -89,26 +50,6 @@ const Profile = () => {
   const renderContent2 = (section) => (
     <Donar/>
     
-  );
-
-  const SECTIONS3 = [
-    {
-      title: "Manage Blood Request",
-      content: `Welcome ${name.name} ${name.number}`,
-    },
-  ];
-
-  const renderHeader3 = (section, _, isActive) => (
-    <View style={styles.header}>
-      <Text style={styles.headerText}>{section.title}</Text>
-    </View>
-  );
-
-  const renderContent3 = (section) => (
-    <View style={styles.content}>
-      <Text>{section.content}</Text>
-      <View style={styles.card}></View>
-    </View>
   );
 
   const SECTIONS4 = [
@@ -148,15 +89,7 @@ const Profile = () => {
     <ScrollView style={styles.container}>
       <Header />
       <Text style={styles.headName}>{name.name}</Text>
-      <View style={styles.accordion}>
-        <Accordion
-          sections={SECTIONS}
-          activeSections={activeSections}
-          renderHeader={renderHeader}
-          renderContent={renderContent}
-          onChange={setActiveSections}
-        />
-      </View>
+      
       <View style={styles.accordion}>
         <Accordion
           sections={SECTIONS2}
@@ -166,17 +99,6 @@ const Profile = () => {
           onChange={setActiveSections2}
         />
       </View>
-
-      <View style={styles.accordion}>
-        <Accordion
-          sections={SECTIONS3}
-          activeSections={activeSections3}
-          renderHeader={renderHeader3}
-          renderContent={renderContent3}
-          onChange={setActiveSections3}
-        />
-      </View>
-
       <View style={styles.accordion}>
         <Accordion
           sections={SECTIONS4}
