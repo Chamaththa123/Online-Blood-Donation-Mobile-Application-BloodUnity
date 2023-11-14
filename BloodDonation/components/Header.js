@@ -1,4 +1,11 @@
-import { View, Image, StyleSheet, ImageBackground, Text } from "react-native";
+import {
+  View,
+  Image,
+  StyleSheet,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { firebase } from "../firebase/config";
 import MyImage from "../assets/profile.png";
@@ -22,37 +29,69 @@ const Header = ({ title }) => {
   }, []);
 
   return (
-    <View style={styles.card}>
-      <ImageBackground
-        source={require("../assets/home.jpg")} // Replace with the actual path to your image
-        style={styles.backgroundImage}
-      >
-        <View style={styles.rowContainer1}>
-          <View style={styles.card1}>
-            <Text style={styles.card1Text}>{name.Btype}</Text>
-          </View>
-          <View style={styles.card3}></View>
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.container}>
+        <View style={styles.card3}>
+        <View style={styles.headerContainer}>
+          <Image source={MyImage} style={styles.image} />
+          <Text style={styles.HeaderHello}>{name.name}</Text>
         </View>
-        <View style={styles.rowContainer}>
-          <View style={styles.card2}>
-            <Image source={MyImage} style={styles.image} />
-          </View>
+        <Text style={styles.Headername}>{name.email}</Text>
+        <Text style={styles.header1}>
+          <TouchableOpacity style={styles.buttonStyle}>
+            <Text style={styles.buttonText}>Edit Profile</Text>
+          </TouchableOpacity>
+        </Text>
         </View>
-      </ImageBackground>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: 10,
+  },
+  scrollView: {
+    flex: 1,
+    width: "100%",
+  },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    fontSize: 18,
+    marginTop: 10,
+  },
+  HeaderHello: {
+    marginTop: -40,
+    fontWeight: "bold",
+    fontSize: 20,
+    marginLeft: 27,
+  },
+  Headername: {
+    fontSize: 18,
+    margin: 10,
+    marginTop: -43,
+    marginLeft: 120,
+  },
+  header1: {
+    fontSize: 25,
+    margin: 10,
+    marginTop: 10,
+    color: "#FF1515",
+    marginLeft: 120,
+  },
   backgroundImage: {
     flex: 1,
     resizeMode: "cover", // or 'stretch' or 'contain'
   },
   image: {
-    width: 120,
-    height: 120,
+    width: 80,
+    height: 80,
     alignItems: "center",
-    marginLeft:13
+    marginLeft: 13,
   },
   card: {
     backgroundColor: "#CB0303",
@@ -63,7 +102,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
     width: "100%",
-    height: 300,
+
   },
   rowContainer: {
     flexDirection: "row",
@@ -103,19 +142,33 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
   },
   card3: {
-    backgroundColor: "#CB0303",
-    borderRadius: 80,
+    backgroundColor: "#fff",
+    borderRadius: 10,
     shadowRadius: 4,
     elevation: 5,
-    width: 120,
-    height: 120,
+    width: "100%",
     borderWidth: 1,
-    borderColor: "#fff",
-    marginLeft: 90,
+    borderColor: "#",
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
+  },
+  buttonStyle: {
+    backgroundColor: "#FF1515",
+    borderRadius: 10,
+    width: "100%",
+    borderColor: "#FF1515",
+    borderWidth: 1,
+    justifyContent: "center",
+    color: "white",
+    padding: 15,
   },
 });
 

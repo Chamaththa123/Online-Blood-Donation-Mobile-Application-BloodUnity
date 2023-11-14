@@ -88,7 +88,7 @@ const Profile = () => {
   return (
     <ScrollView style={styles.container}>
       <Header />
-      <Text style={styles.headName}>{name.name}</Text>
+      
       
       <View style={styles.accordion}>
         <Accordion
@@ -116,13 +116,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-  },
-  headName: {
-    margin: 10,
-    marginTop: 90,
-    textAlign: "center",
-    fontSize: 20,
-    fontWeight: "600",
   },
   header: {
     backgroundColor: "#fff",
