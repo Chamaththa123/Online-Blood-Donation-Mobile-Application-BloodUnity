@@ -8,10 +8,26 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { firebase } from "../firebase/config";
+import { useNavigation } from "@react-navigation/native";
 import MyImage from "../assets/profile.png";
 
 const Header = ({ title }) => {
   const [name, setName] = useState({});
+  const navigation = useNavigation();
+
+  const handleSignOut = () => {
+    console.log("Signing out...");
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        console.log("Sign-out successful");
+        navigation.navigate("Start");
+      })
+      .catch((error) => {
+        console.error("Sign-out error:", error);
+      });
+  };
 
   useEffect(() => {
     firebase
@@ -38,7 +54,10 @@ const Header = ({ title }) => {
           </View>
           <Text style={styles.Headername}>{name.email}</Text>
           <Text style={styles.header1}>
-            <TouchableOpacity style={styles.buttonStyle}>
+            <TouchableOpacity
+              style={styles.buttonStyle}
+              onPress={handleSignOut}
+            >
               <Text style={styles.buttonText}> Sign Out</Text>
             </TouchableOpacity>
           </Text>
@@ -71,7 +90,7 @@ const styles = StyleSheet.create({
     marginLeft: 27,
   },
   Headername: {
-    fontSize: 18,
+    fontSize: 15,
     margin: 10,
     marginTop: -43,
     marginLeft: 120,
@@ -83,62 +102,11 @@ const styles = StyleSheet.create({
     color: "#FF1515",
     marginLeft: 120,
   },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: "cover",
-  },
   image: {
     width: 80,
     height: 80,
     alignItems: "center",
     marginLeft: 13,
-  },
-  card: {
-    backgroundColor: "#CB0303",
-    padding: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
-    width: "100%",
-  },
-  rowContainer: {
-    flexDirection: "row",
-    justifyContent: "center", 
-    marginTop: "-36%",
-  },
-  rowContainer1: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 220,
-  },
-  card1: {
-    backgroundColor: "#CB0303",
-    borderRadius: 80,
-    shadowRadius: 4,
-    elevation: 5,
-    width: 120,
-    height: 120,
-    borderWidth: 1,
-    borderColor: "#fff",
-    marginRight: 10,
-  },
-  card1Text: {
-    marginLeft: 35,
-    marginTop: 38,
-    fontSize: 35,
-    color: "#fff",
-  },
-  card2: {
-    backgroundColor: "#CB0303",
-    borderRadius: 80,
-    shadowRadius: 4,
-    elevation: 5,
-    width: 150,
-    height: 150,
-    borderWidth: 1,
-    borderColor: "#fff",
   },
   card3: {
     backgroundColor: "#fff",
@@ -146,10 +114,6 @@ const styles = StyleSheet.create({
     width: "100%",
     borderWidth: 1,
     borderColor: "#FF1515",
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
   },
   buttonText: {
     fontSize: 16,
@@ -162,7 +126,7 @@ const styles = StyleSheet.create({
     borderColor: "#FF1515",
     borderWidth: 1,
     justifyContent: "center",
-    padding: 15,
+    padding: 10,
   },
 });
 
