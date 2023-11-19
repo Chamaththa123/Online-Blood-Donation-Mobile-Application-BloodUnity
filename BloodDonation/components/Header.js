@@ -39,7 +39,7 @@ const Header = ({ title }) => {
           <Text style={styles.Headername}>{name.email}</Text>
           <Text style={styles.header1}>
             <TouchableOpacity style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>Edit Profile</Text>
+              <Text style={styles.buttonText}> Sign Out</Text>
             </TouchableOpacity>
           </Text>
         </View>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
-    resizeMode: "cover", // or 'stretch' or 'contain'
+    resizeMode: "cover",
   },
   image: {
     width: 80,
@@ -105,12 +105,12 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: "row",
-    justifyContent: "center", // Center the cards
+    justifyContent: "center", 
     marginTop: "-36%",
   },
   rowContainer1: {
     flexDirection: "row",
-    justifyContent: "center", // Center the cards
+    justifyContent: "center",
     marginTop: 220,
   },
   card1: {
@@ -143,8 +143,6 @@ const styles = StyleSheet.create({
   card3: {
     backgroundColor: "#fff",
     borderRadius: 10,
-    shadowRadius: 4,
-    elevation: 5,
     width: "100%",
     borderWidth: 1,
     borderColor: "#FF1515",
@@ -157,16 +155,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-    textAlign: "center",
   },
   buttonStyle: {
     backgroundColor: "#FF1515",
     borderRadius: 10,
-    width: "100%",
     borderColor: "#FF1515",
     borderWidth: 1,
     justifyContent: "center",
-    color: "white",
     padding: 15,
   },
 });
