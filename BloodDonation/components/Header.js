@@ -32,16 +32,16 @@ const Header = ({ title }) => {
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.card3}>
-        <View style={styles.headerContainer}>
-          <Image source={MyImage} style={styles.image} />
-          <Text style={styles.HeaderHello}>{name.name}</Text>
-        </View>
-        <Text style={styles.Headername}>{name.email}</Text>
-        <Text style={styles.header1}>
-          <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={styles.buttonText}>Edit Profile</Text>
-          </TouchableOpacity>
-        </Text>
+          <View style={styles.headerContainer}>
+            <Image source={MyImage} style={styles.image} />
+            <Text style={styles.HeaderHello}>{name.name}</Text>
+          </View>
+          <Text style={styles.Headername}>{name.email}</Text>
+          <Text style={styles.header1}>
+            <TouchableOpacity style={styles.buttonStyle}>
+              <Text style={styles.buttonText}>Edit Profile</Text>
+            </TouchableOpacity>
+          </Text>
         </View>
       </View>
     </ScrollView>
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
     width: "100%",
-
   },
   rowContainer: {
     flexDirection: "row",
@@ -148,7 +147,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: "100%",
     borderWidth: 1,
-    borderColor: "#",
+    borderColor: "#FF1515",
   },
   title: {
     fontSize: 18,
