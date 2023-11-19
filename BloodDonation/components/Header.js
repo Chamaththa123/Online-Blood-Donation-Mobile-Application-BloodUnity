@@ -15,6 +15,16 @@ const Header = ({ title }) => {
   const [name, setName] = useState({});
   const navigation = useNavigation();
 
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitleStyle: {
+        fontWeight: "bold",
+      },
+      headerShown: true,
+      title: "My Profile",
+    });
+  }, []);
+
   const handleSignOut = () => {
     console.log("Signing out...");
     firebase
