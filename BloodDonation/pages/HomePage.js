@@ -88,13 +88,15 @@ const HomePage = ({ route, navigation }) => {
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <Text style={styles.HeaderHello}>Hello,</Text>
-            <Image source={MyImage} style={styles.image} />
+          <Image source={MyImage} style={styles.image} />
         </View>
         <Text style={styles.Headername}>{name.name}</Text>
         <Text style={styles.header1}>Donate Blood Save Life !</Text>
         <Image source={image3} style={styles.image3} />
         <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText} onPress={handleImageClick}>Find Blood Donar</Text>
+          <Text style={styles.buttonText} onPress={handleImageClick}>
+            Find Blood Donar
+          </Text>
         </TouchableOpacity>
 
         <View style={styles.accordion}>
@@ -107,41 +109,45 @@ const HomePage = ({ route, navigation }) => {
           />
         </View>
         <Image source={image5} style={styles.image3} />
-        <Image source={image4} style={styles.image3} />
         <Text style={styles.text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt,
-          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
-          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
-          ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Sed ut perspiciatis, unde omnis iste
-          natus error sit voluptatem accusantium doloremque laudantium, totam
-          rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam
-          voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt,
-          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
-          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
-          ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Sed ut perspiciatis, unde omnis iste
-          natus error sit voluptatem accusantium doloremque laudantium, totam
-          rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam
-          voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-          perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt,
-          explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
-          aut odit aut fugit, sed quia consequuntur magni dolores eos, qui
-          ratione voluptatem sequi nesciunt.
+          World Blood Donor Day is observed every year on June 14th. It's a day
+          dedicated to raising awareness about the importance of blood donation
+          and expressing gratitude to voluntary blood donors for their
+          life-saving contributions. The event serves as a reminder of the
+          critical need for safe blood and blood products and encourages more
+          people to donate blood regularly to save lives. The theme for each
+          year's celebration often focuses on specific aspects of blood donation
+          or the importance of access to safe blood. It's an opportunity to
+          recognize the invaluable contribution of blood donors worldwide and
+          encourage others to join in this noble cause.
+        </Text>
+        <Image source={image4} style={styles.image3} />
+        <Text style={styles.text2}>
+        <Text>
+        Blood donation is a selfless act that can have numerous benefits for
+        both the donor and the recipient.
+      </Text>
+
+      <Text>
+        Saving Lives: Perhaps the most significant benefit of blood donation is
+        the opportunity to save lives. Blood transfusions are crucial for
+        various medical procedures, surgeries, and for treating patients with
+        certain medical conditions such as cancer, anemia, and trauma.
+      </Text>
+
+      <Text>
+        Community Health: Blood donation contributes to the overall health and
+        well-being of the community. By donating blood, individuals help ensure
+        that an adequate and safe blood supply is available for those in need.
+      </Text>
+
+      <Text>
+        Reduces the Risk of Certain Health Issues: Regular blood donation may
+        help reduce the risk of certain health issues. For example, it can help
+        lower the risk of cardiovascular diseases by reducing iron levels in the
+        body. High iron levels have been linked to an increased risk of heart
+        disease.
+      </Text>
         </Text>
       </View>
     </ScrollView>
@@ -153,6 +159,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 10,
+    minHeight: 4800
   },
   header: {
     fontSize: 20,
@@ -190,7 +197,11 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   text: {
-    fontSize: 16,
+    fontSize: 14,
+    lineHeight: 24,
+  },
+  text2: {
+    fontSize: 14,
     lineHeight: 24,
   },
   accordion: {
@@ -202,7 +213,7 @@ const styles = StyleSheet.create({
   },
   image3: {
     width: "100%",
-    height: "19%",
+    height: "4%",
     borderRadius: 20,
   },
   header1: {
