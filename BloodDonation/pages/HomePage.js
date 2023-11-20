@@ -11,6 +11,8 @@ import {
 import Accordion from "react-native-collapsible/Accordion";
 import MyImage from "../assets/profile.png";
 import image3 from "../assets/image4.jpg";
+import image4 from "../assets/Image5.png";
+import image5 from "../assets/day.jpg";
 import { useNavigation } from "@react-navigation/native";
 
 const HomePage = ({ route, navigation }) => {
@@ -104,6 +106,8 @@ const HomePage = ({ route, navigation }) => {
             onChange={setActiveSections}
           />
         </View>
+        <Image source={image5} style={styles.image3} />
+        <Image source={image4} style={styles.image3} />
         <Text style={styles.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
           perspiciatis, unde omnis iste natus error sit voluptatem accusantium
