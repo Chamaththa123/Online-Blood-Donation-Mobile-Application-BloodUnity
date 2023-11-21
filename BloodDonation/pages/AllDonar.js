@@ -47,35 +47,60 @@ const AllDonors = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
-        <Text style={styles.header}>All Donors Details</Text>
+        <Text style={styles.header}>Find Blood Donar</Text>
         <View style={styles.dropdownContainer}>
           <Text>Select District: </Text>
-          <Picker
-            selectedValue={selectedDistrict}
-            style={{ height: 50, width: 150 }}
-            onValueChange={(itemValue) => setSelectedDistrict(itemValue)}
-          >
-            <Picker.Item label="Select District" value="" />
-            <Picker.Item label="Kegalle" value="Kegalle" />
-            <Picker.Item label="Rathnapura" value="Rathnapura" />
-            {/* Add other district options as needed */}
-          </Picker>
+          <View style={styles.select1}>
+            <Picker
+              selectedValue={selectedDistrict}
+              style={{ height: 50, width: 150 }}
+              onValueChange={(itemValue) => setSelectedDistrict(itemValue)}
+            >
+              <Picker.Item label="Select District" value="" />
+              <Picker.Item label="Colombo" value="Colombo" />
+              <Picker.Item label="Gampaha" value="Gampaha" />
+              <Picker.Item label="Kalutara" value="Kalutara" />
+              <Picker.Item label="Kandy" value="Kandy" />
+              <Picker.Item label="Matale" value="Matale" />
+              <Picker.Item label="Nuwara Eliya" value="Nuwara Eliya" />
+              <Picker.Item label="Galle" value="Galle" />
+              <Picker.Item label="Matara" value="Matara" />
+              <Picker.Item label="Hambantota" value="Hambantota" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              <Picker.Item label="Rathnapura" value="Rathnapura" />
+              {/* Add other district options as needed */}
+            </Picker>
+          </View>
         </View>
         <View style={styles.dropdownContainer}>
           <Text>Select Blood Type: </Text>
-          <Picker
-            selectedValue={selectedBloodType}
-            style={{ height: 50, width: 150 }}
-            onValueChange={(itemValue) => setSelectedBloodType(itemValue)}
-          >
-            <Picker.Item label="Select Blood Type" value="" />
-            <Picker.Item label="A+" value="A+" />
-            <Picker.Item label="A" value="A" />
-            <Picker.Item label="B+" value="B+" />
-            <Picker.Item label="B-" value="B-" />
-            {/* Add more blood types as needed */}
-          </Picker>
+          <View style={styles.select2}>
+            <Picker
+              selectedValue={selectedBloodType}
+              style={{ height: 50, width: 150 }}
+              onValueChange={(itemValue) => setSelectedBloodType(itemValue)}
+            >
+              <Picker.Item label="Select Blood Type" value="" />
+              <Picker.Item label="A+" value="A+" />
+              <Picker.Item label="A-" value="A-" />
+              <Picker.Item label="B+" value="B+" />
+              <Picker.Item label="B-" value="B-" />
+              <Picker.Item label="AB+" value="AB+" />
+              <Picker.Item label="AB-" value="AB-" />
+              <Picker.Item label="O+" value="O+" />
+              <Picker.Item label="O-" value="O-" />
+              {/* Add more blood types as needed */}
+            </Picker>
+          </View>
         </View>
+        <Text style={styles.header}>All  Available Donors</Text>
 
         {/* Display filtered donors based on the selected blood type */}
         {sortedDonors.map((donor, index) => (
@@ -102,7 +127,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 40,
     color: "#FF1515",
   },
   donorContainer: {
@@ -120,6 +145,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 10,
+  },
+  select1: {
+    borderWidth: 1,
+    borderColor: "#F76363",
+    borderRadius: 10,
+    marginLeft: 40,
+  },
+  select2: {
+    borderWidth: 1,
+    borderColor: "#F76363",
+    borderRadius: 10,
+    marginLeft: 20,
   },
 });
 
