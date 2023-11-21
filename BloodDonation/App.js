@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import HomePage from './pages/HomePage';
+import AllDonar from './pages/AllDonar';
 
 
 
@@ -42,6 +43,7 @@ const App = () => {
     <Stack.Navigator>
           <Stack.Screen name='Home' component={HomePage} />
       <Stack.Screen name='Profile' component={Profile} />
+      <Stack.Screen name='AllDonar' component={AllDonar} />
     </Stack.Navigator>
 ) 
 };

@@ -40,6 +40,10 @@ const HomePage = ({ route, navigation }) => {
     // Navigate to another screen when the image is clicked
     navigation.navigate("Profile");
   };
+  const AllDonar = () => {
+    // Navigate to another screen when the image is clicked
+    navigation.navigate("AllDonar");
+  };
 
   const SECTIONS = [
     {
@@ -94,8 +98,13 @@ const HomePage = ({ route, navigation }) => {
         <Text style={styles.header1}>Donate Blood Save Life !</Text>
         <Image source={image3} style={styles.image3} />
         <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText} onPress={handleImageClick}>
+          <Text style={styles.buttonText} onPress={AllDonar}>
             Find Blood Donar
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Text style={styles.buttonText} onPress={handleImageClick}>
+            Profile
           </Text>
         </TouchableOpacity>
 
@@ -123,31 +132,32 @@ const HomePage = ({ route, navigation }) => {
         </Text>
         <Image source={image4} style={styles.image3} />
         <Text style={styles.text2}>
-        <Text>
-        Blood donation is a selfless act that can have numerous benefits for
-        both the donor and the recipient.
-      </Text>
+          <Text>
+            Blood donation is a selfless act that can have numerous benefits for
+            both the donor and the recipient.
+          </Text>
 
-      <Text>
-        Saving Lives: Perhaps the most significant benefit of blood donation is
-        the opportunity to save lives. Blood transfusions are crucial for
-        various medical procedures, surgeries, and for treating patients with
-        certain medical conditions such as cancer, anemia, and trauma.
-      </Text>
+          <Text>
+            Saving Lives: Perhaps the most significant benefit of blood donation
+            is the opportunity to save lives. Blood transfusions are crucial for
+            various medical procedures, surgeries, and for treating patients
+            with certain medical conditions such as cancer, anemia, and trauma.
+          </Text>
 
-      <Text>
-        Community Health: Blood donation contributes to the overall health and
-        well-being of the community. By donating blood, individuals help ensure
-        that an adequate and safe blood supply is available for those in need.
-      </Text>
+          <Text>
+            Community Health: Blood donation contributes to the overall health
+            and well-being of the community. By donating blood, individuals help
+            ensure that an adequate and safe blood supply is available for those
+            in need.
+          </Text>
 
-      <Text>
-        Reduces the Risk of Certain Health Issues: Regular blood donation may
-        help reduce the risk of certain health issues. For example, it can help
-        lower the risk of cardiovascular diseases by reducing iron levels in the
-        body. High iron levels have been linked to an increased risk of heart
-        disease.
-      </Text>
+          <Text>
+            Reduces the Risk of Certain Health Issues: Regular blood donation
+            may help reduce the risk of certain health issues. For example, it
+            can help lower the risk of cardiovascular diseases by reducing iron
+            levels in the body. High iron levels have been linked to an
+            increased risk of heart disease.
+          </Text>
         </Text>
       </View>
     </ScrollView>
@@ -159,7 +169,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 10,
-    minHeight: 4800
+    minHeight: 4800,
   },
   header: {
     fontSize: 20,
