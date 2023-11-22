@@ -22,6 +22,19 @@ const HomePage = ({ route, navigation }) => {
   const [activeSections, setActiveSections] = useState([]);
 
   useEffect(() => {
+    
+    navigation.setOptions({
+      headerTitleStyle: {
+        fontWeight: "bold",
+        color: "#FF1515",
+        fontSize:25
+      },
+      headerShown: true,
+      title: "PlasmaPulse ",
+    });
+  });
+
+  useEffect(() => {
     firebase
       .firestore()
       .collection("users")
@@ -91,8 +104,10 @@ const HomePage = ({ route, navigation }) => {
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
-          <Text style={styles.HeaderHello}>Hello,</Text>
-          <Image source={MyImage} style={styles.image} />
+          <View style={styles.card}>
+            <Text style={styles.HeaderHello}>Hello,</Text>
+            <Image source={MyImage} style={styles.image} />
+          </View>
         </View>
         <Text style={styles.Headername}>{name.name}</Text>
         <Text style={styles.header1}>Donate Blood Save Life !</Text>
@@ -194,17 +209,17 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   Headername: {
-    fontSize: 18,
-    margin: 10,
-    marginTop: -5,
+    fontSize: 16,
+    margin: 15,
+    marginTop: -40,
   },
   image: {
-    width: 55,
-    height: 55,
+    width: 65,
+    height: 65,
     position: "absolute",
     right: 1,
     top: 0,
-    margin: 10,
+    margin: 15,
   },
   text: {
     fontSize: 14,
@@ -258,6 +273,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     color: "white",
     padding: 15,
+  },
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 5,
+    borderColor: "#FF1515",
+    borderWidth: 1,
+    width: "100%",
+    height: 90,
   },
 });
 
