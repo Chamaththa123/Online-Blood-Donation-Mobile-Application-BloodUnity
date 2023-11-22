@@ -94,9 +94,26 @@ const Donar = () => {
     return (
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.container}>
-          <Text>
-            {donorDetail.dname}: {donorDetail.distric}
-          </Text>
+          <Text style={styles.label}>Registered Name</Text>
+          <View style={styles.card}>
+            <Text style={styles.detailText}>{donorDetail.dname}</Text>
+          </View>
+          <Text style={styles.label}>Blood Type</Text>
+          <View style={styles.card}>
+            <Text style={styles.detailText}>{donorDetail.Btype}</Text>
+          </View>
+          <Text style={styles.label}>District</Text>
+          <View style={styles.card}>
+            <Text style={styles.detailText}>{donorDetail.distric}</Text>
+          </View>
+          <Text style={styles.label}>Area</Text>
+          <View style={styles.card}>
+            <Text style={styles.detailText}>{donorDetail.area}</Text>
+          </View>
+          <Text style={styles.label}>Contact No</Text>
+          <View style={styles.card}>
+            <Text style={styles.detailText}>{donorDetail.number}</Text>
+          </View>
         </View>
       </ScrollView>
     );
@@ -166,12 +183,6 @@ const Donar = () => {
           <TouchableOpacity style={styles.buttonStyle} onPress={handleAddMarks}>
             <Text style={styles.buttonText}>Submit Details</Text>
           </TouchableOpacity>
-
-          {donarDetails.map((item, index) => (
-            <Text key={index}>
-              {item.dname}: {item.distric}
-            </Text>
-          ))}
         </View>
       </ScrollView>
     );
@@ -241,6 +252,27 @@ const styles = StyleSheet.create({
   },
   picker: {
     width: "100%",
+  },
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 15,
+    borderColor: "#FF1515",
+    borderWidth: 1,
+    width: "100%",
+  },
+  userIcon: {
+    textAlign: "center",
+    color: "#FF1515",
+  },
+  detailText: {
+    fontSize: 16,
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 10,
+    marginTop: 10,
+    fontWeight: "bold",
   },
 });
 

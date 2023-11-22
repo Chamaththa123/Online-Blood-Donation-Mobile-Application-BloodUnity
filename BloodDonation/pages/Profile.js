@@ -34,10 +34,9 @@ const Profile = () => {
       });
   };
 
-
   const SECTIONS2 = [
     {
-      title: "Manage Blood Donar Details",
+      title: "Become a Blood Donar",
     },
   ];
 
@@ -47,10 +46,7 @@ const Profile = () => {
     </View>
   );
 
-  const renderContent2 = (section) => (
-    <Donar/>
-    
-  );
+  const renderContent2 = (section) => <Donar />;
 
   const SECTIONS4 = [
     {
@@ -88,8 +84,7 @@ const Profile = () => {
   return (
     <ScrollView style={styles.container}>
       <Header />
-      
-      
+
       <View style={styles.accordion}>
         <Accordion
           sections={SECTIONS2}
