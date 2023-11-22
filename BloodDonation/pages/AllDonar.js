@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { firebase } from "../firebase/config";
 
@@ -49,7 +55,7 @@ const AllDonors = () => {
       <View style={styles.container}>
         <Text style={styles.header}>Find Blood Donar</Text>
         <View style={styles.dropdownContainer}>
-          <Text>Select District: </Text>
+          <Text  style={{fontSize:18}}>Select District: </Text>
           <View style={styles.select1}>
             <Picker
               selectedValue={selectedDistrict}
@@ -80,7 +86,7 @@ const AllDonors = () => {
           </View>
         </View>
         <View style={styles.dropdownContainer}>
-          <Text>Select Blood Type: </Text>
+          <Text style={{fontSize:18}}>Select Blood Type: </Text>
           <View style={styles.select2}>
             <Picker
               selectedValue={selectedBloodType}
@@ -100,16 +106,28 @@ const AllDonors = () => {
             </Picker>
           </View>
         </View>
-        <Text style={styles.header}>All  Available Donors</Text>
+        <Text style={styles.header}>All Available Blood Donors</Text>
 
         {/* Display filtered donors based on the selected blood type */}
         {sortedDonors.map((donor, index) => (
-          <View key={index} style={styles.donorContainer}>
-            <Text>Name: {donor.dname}</Text>
-            <Text>Blood Type: {donor.Btype}</Text>
-            <Text>Contact Number: {donor.number}</Text>
-            <Text>District: {donor.distric}</Text>
-            <Text>Area: {donor.area}</Text>
+          <View key={index}>
+            <View style={styles.donorContainer}>
+              <View style={styles.donorContainer2}>
+                <Text style={styles.btype}>{donor.Btype}</Text>
+              </View>
+              <Text style={{ marginLeft: 10 }}>
+                <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                  {donor.dname}
+                </Text>
+                {"\n"}
+                <Text>{donor.distric}</Text>
+                {"\n"}
+                <Text>{donor.area}</Text>
+              </Text>
+            </View>
+            <TouchableOpacity style={styles.touchable}>
+              <Text style={styles.text}>Ask for Help</Text>
+            </TouchableOpacity>
           </View>
         ))}
       </View>
@@ -128,15 +146,33 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 40,
+    marginTop:20,
     color: "#FF1515",
   },
   donorContainer: {
+    flexDirection: "row",
     borderWidth: 1,
-    borderColor: "#F76363",
+    borderColor: "red",
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
     backgroundColor: "rgba(255, 255, 255, 0.8)",
+  },
+  donorContainer2: {
+    borderWidth: 1,
+    width: 70,
+    height: 70,
+    borderColor: "red",
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: "#FF1515",
+    justifyContent: "center",
+  },
+  btype: {
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 22,
   },
   scrollViewContent: {
     flexGrow: 1,
@@ -148,15 +184,33 @@ const styles = StyleSheet.create({
   },
   select1: {
     borderWidth: 1,
-    borderColor: "#F76363",
+    borderColor: "#FF1515",
     borderRadius: 10,
-    marginLeft: 40,
+    marginLeft: 45,
   },
   select2: {
     borderWidth: 1,
-    borderColor: "#F76363",
+    borderColor: "#FF1515",
     borderRadius: 10,
     marginLeft: 20,
+  },
+  touchable: {
+    padding: 10,
+    backgroundColor: "#fff",
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: "#FF1515",
+    height: 45,
+    width: 120,
+    marginTop: -70,
+    marginLeft: "66%",
+    marginBottom: 30,
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "500",
+    justifyContent:'center',
+    textAlign:'center'
   },
 });
 
