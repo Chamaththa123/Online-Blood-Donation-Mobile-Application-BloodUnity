@@ -8,11 +8,25 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { firebase } from "../firebase/config";
+import { useNavigation } from "@react-navigation/native";
 
 const AllDonors = () => {
   const [allDonors, setAllDonors] = useState([]);
   const [selectedBloodType, setSelectedBloodType] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitleStyle: {
+        fontWeight: "bold",
+        color: "#FF1515",
+      },
+      headerTintColor: "#FF1515",
+      headerShown: true,
+      title: "Find Blood Donor",
+    });
+  }, []);
 
   useEffect(() => {
     const fetchAllDonors = async () => {
@@ -53,9 +67,8 @@ const AllDonors = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
-        <Text style={styles.header}>Find Blood Donar</Text>
         <View style={styles.dropdownContainer}>
-          <Text  style={{fontSize:18}}>Select District: </Text>
+          <Text style={{ fontSize: 17 }}>Select District: </Text>
           <View style={styles.select1}>
             <Picker
               selectedValue={selectedDistrict}
@@ -72,21 +85,28 @@ const AllDonors = () => {
               <Picker.Item label="Galle" value="Galle" />
               <Picker.Item label="Matara" value="Matara" />
               <Picker.Item label="Hambantota" value="Hambantota" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              <Picker.Item label="Rathnapura" value="Rathnapura" />
-              {/* Add other district options as needed */}
+              <Picker.Item label="Jaffna" value="Jaffna" />
+              <Picker.Item label="Kilinochchi" value="Kilinochchi" />
+              <Picker.Item label="Mannar" value="Mannar" />
+              <Picker.Item label="Vavuniya" value="Vavuniya" />
+              <Picker.Item label="Mullaitivu" value="Mullaitivu" />
+              <Picker.Item label="Batticaloa" value="Batticaloa" />
+              <Picker.Item label="Ampara" value="Ampara" />
+              <Picker.Item label="Trincomalee" value="Trincomalee" />
+              <Picker.Item label="Kurunegala" value="Kurunegala" />
+              <Picker.Item label="Puttalam" value="Puttalam" />
+              <Picker.Item label="Kurunegala" value="Kurunegala" />
+              <Picker.Item label="Anuradhapura" value="Anuradhapura" />
+              <Picker.Item label="Polonnaruwa" value="Polonnaruwa" />
+              <Picker.Item label="Badulla" value="Badulla" />
+              <Picker.Item label="Moneragala" value="Moneragala" />
+              <Picker.Item label="Ratnapura" value="Ratnapura" />
+              <Picker.Item label="Kegalle" value="Kegalle" />
             </Picker>
           </View>
         </View>
         <View style={styles.dropdownContainer}>
-          <Text style={{fontSize:18}}>Select Blood Type: </Text>
+          <Text style={{ fontSize: 17 }}>Select Blood Type: </Text>
           <View style={styles.select2}>
             <Picker
               selectedValue={selectedBloodType}
@@ -102,13 +122,11 @@ const AllDonors = () => {
               <Picker.Item label="AB-" value="AB-" />
               <Picker.Item label="O+" value="O+" />
               <Picker.Item label="O-" value="O-" />
-              {/* Add more blood types as needed */}
             </Picker>
           </View>
         </View>
         <Text style={styles.header}>All Available Blood Donors</Text>
 
-        {/* Display filtered donors based on the selected blood type */}
         {sortedDonors.map((donor, index) => (
           <View key={index}>
             <View style={styles.donorContainer}>
@@ -125,7 +143,12 @@ const AllDonors = () => {
                 <Text>{donor.area}</Text>
               </Text>
             </View>
-            <TouchableOpacity style={styles.touchable}>
+            <TouchableOpacity
+              style={styles.touchable}
+              onPress={() =>
+                navigation.navigate("DonorDetails", { donorDetails: donor })
+              }
+            >
               <Text style={styles.text}>Ask for Help</Text>
             </TouchableOpacity>
           </View>
@@ -141,12 +164,13 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "white",
     padding: 10,
+    paddingTop: 30,
   },
   header: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 40,
-    marginTop:20,
+    marginTop: 20,
     color: "#FF1515",
   },
   donorContainer: {
@@ -209,8 +233,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: "500",
-    justifyContent:'center',
-    textAlign:'center'
+    justifyContent: "center",
+    textAlign: "center",
   },
 });
 

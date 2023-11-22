@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import HomePage from './pages/HomePage';
 import AllDonar from './pages/AllDonar';
+import DonarDetails from './pages/DonarDetails';
 
 
 
@@ -44,6 +45,7 @@ const App = () => {
           <Stack.Screen name='Home' component={HomePage} />
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='AllDonar' component={AllDonar} />
+      <Stack.Screen name='DonorDetails' component={DonarDetails} />
     </Stack.Navigator>
 ) 
 };
