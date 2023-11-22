@@ -19,7 +19,9 @@ const Header = ({ title }) => {
     navigation.setOptions({
       headerTitleStyle: {
         fontWeight: "bold",
+        color: "#FF1515",
       },
+      headerTintColor: "#FF1515",
       headerShown: true,
       title: "My Profile",
     });
