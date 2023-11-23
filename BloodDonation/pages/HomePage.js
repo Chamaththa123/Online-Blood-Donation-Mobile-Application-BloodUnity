@@ -26,7 +26,7 @@ const HomePage = ({ route, navigation }) => {
       headerTitleStyle: {
         fontWeight: "bold",
         color: "#FF1515",
-        fontSize: 25,
+        fontSize: 23,
       },
       headerShown: true,
       title: "BloodUnity ",
@@ -49,11 +49,9 @@ const HomePage = ({ route, navigation }) => {
   }, []);
 
   const handleImageClick = () => {
-    // Navigate to another screen when the image is clicked
     navigation.navigate("Profile");
   };
   const AllDonar = () => {
-    // Navigate to another screen when the image is clicked
     navigation.navigate("AllDonar");
   };
 
@@ -72,7 +70,7 @@ const HomePage = ({ route, navigation }) => {
 
   const renderContent = (section) => (
     <View style={styles.content}>
-      <Image source={image4} style={styles.image3} />
+      <Image source={image4} style={styles.image4} />
         <Text style={styles.text2}>
           <Text>
             Blood donation is a selfless act that can have numerous benefits for
@@ -214,6 +212,11 @@ const styles = StyleSheet.create({
   image3: {
     width: "100%",
     height: "4%",
+    borderRadius: 20,
+  },
+  image4: {
+    width: "100%",
+    height: "38%",
     borderRadius: 20,
   },
   header1: {
