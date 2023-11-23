@@ -14,25 +14,9 @@ import Donar from "../components/Donar";
 
 const Profile = () => {
   const [name, setName] = useState({});
-  const [activeSections, setActiveSections] = useState([]);
   const [activeSections2, setActiveSections2] = useState([]);
-  const [activeSections3, setActiveSections3] = useState([]);
   const [activeSections4, setActiveSections4] = useState([]);
-  const navigation = useNavigation();
 
-  const handleSignOut = () => {
-    console.log("Signing out...");
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        console.log("Sign-out successful");
-        navigation.navigate("Start");
-      })
-      .catch((error) => {
-        console.error("Sign-out error:", error);
-      });
-  };
 
   const SECTIONS2 = [
     {

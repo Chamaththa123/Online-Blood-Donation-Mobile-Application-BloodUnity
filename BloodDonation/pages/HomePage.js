@@ -22,12 +22,11 @@ const HomePage = ({ route, navigation }) => {
   const [activeSections, setActiveSections] = useState([]);
 
   useEffect(() => {
-    
     navigation.setOptions({
       headerTitleStyle: {
         fontWeight: "bold",
         color: "#FF1515",
-        fontSize:25
+        fontSize: 25,
       },
       headerShown: true,
       title: "PlasmaPulse ",
