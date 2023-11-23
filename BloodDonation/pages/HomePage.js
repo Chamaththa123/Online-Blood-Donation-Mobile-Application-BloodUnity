@@ -29,7 +29,7 @@ const HomePage = ({ route, navigation }) => {
         fontSize: 25,
       },
       headerShown: true,
-      title: "PlasmaPulse ",
+      title: "BloodUnity ",
     });
   });
 
@@ -72,31 +72,35 @@ const HomePage = ({ route, navigation }) => {
 
   const renderContent = (section) => (
     <View style={styles.content}>
-      <Text>
-        Blood donation is a selfless act that can have numerous benefits for
-        both the donor and the recipient.{" "}
-      </Text>
+      <Image source={image4} style={styles.image3} />
+        <Text style={styles.text2}>
+          <Text>
+            Blood donation is a selfless act that can have numerous benefits for
+            both the donor and the recipient.
+          </Text>
 
-      <Text>
-        Saving Lives: Perhaps the most significant benefit of blood donation is
-        the opportunity to save lives. Blood transfusions are crucial for
-        various medical procedures, surgeries, and for treating patients with
-        certain medical conditions such as cancer, anemia, and trauma.
-      </Text>
+          <Text>
+            Saving Lives: Perhaps the most significant benefit of blood donation
+            is the opportunity to save lives. Blood transfusions are crucial for
+            various medical procedures, surgeries, and for treating patients
+            with certain medical conditions such as cancer, anemia, and trauma.
+          </Text>
 
-      <Text>
-        Community Health: Blood donation contributes to the overall health and
-        well-being of the community. By donating blood, individuals help ensure
-        that an adequate and safe blood supply is available for those in need.
-      </Text>
+          <Text>
+            Community Health: Blood donation contributes to the overall health
+            and well-being of the community. By donating blood, individuals help
+            ensure that an adequate and safe blood supply is available for those
+            in need.
+          </Text>
 
-      <Text>
-        Reduces the Risk of Certain Health Issues: Regular blood donation may
-        help reduce the risk of certain health issues. For example, it can help
-        lower the risk of cardiovascular diseases by reducing iron levels in the
-        body. High iron levels have been linked to an increased risk of heart
-        disease.
-      </Text>
+          <Text>
+            Reduces the Risk of Certain Health Issues: Regular blood donation
+            may help reduce the risk of certain health issues. For example, it
+            can help lower the risk of cardiovascular diseases by reducing iron
+            levels in the body. High iron levels have been linked to an
+            increased risk of heart disease.
+          </Text>
+        </Text>
     </View>
   );
   return (
@@ -144,35 +148,7 @@ const HomePage = ({ route, navigation }) => {
           recognize the invaluable contribution of blood donors worldwide and
           encourage others to join in this noble cause.
         </Text>
-        <Image source={image4} style={styles.image3} />
-        <Text style={styles.text2}>
-          <Text>
-            Blood donation is a selfless act that can have numerous benefits for
-            both the donor and the recipient.
-          </Text>
-
-          <Text>
-            Saving Lives: Perhaps the most significant benefit of blood donation
-            is the opportunity to save lives. Blood transfusions are crucial for
-            various medical procedures, surgeries, and for treating patients
-            with certain medical conditions such as cancer, anemia, and trauma.
-          </Text>
-
-          <Text>
-            Community Health: Blood donation contributes to the overall health
-            and well-being of the community. By donating blood, individuals help
-            ensure that an adequate and safe blood supply is available for those
-            in need.
-          </Text>
-
-          <Text>
-            Reduces the Risk of Certain Health Issues: Regular blood donation
-            may help reduce the risk of certain health issues. For example, it
-            can help lower the risk of cardiovascular diseases by reducing iron
-            levels in the body. High iron levels have been linked to an
-            increased risk of heart disease.
-          </Text>
-        </Text>
+        
       </View>
     </ScrollView>
   );
@@ -201,7 +177,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   HeaderHello: {
-    fontSize: 18,
+    fontSize: 15,
     margin: 10,
     fontWeight: "bold",
     color: "#FF1515",
