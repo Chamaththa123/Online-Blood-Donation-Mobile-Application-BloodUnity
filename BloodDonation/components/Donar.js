@@ -118,7 +118,6 @@ const Donar = () => {
         setdistric("");
         setarea("");
 
-        // Display an alert when data is added successfully
         Alert.alert("Success", "You have become a Blood Donor successfully!", [
           {
             text: "OK",
@@ -205,14 +204,13 @@ const Donar = () => {
             style={styles.textBoxes}
             value={number}
             onChangeText={(text) => {
-              // Regular expression to allow only numbers
               const validatedInput = text.replace(/[^0-9]/g, "");
               if (validatedInput.length <= 10) {
                 setnumber(validatedInput);
               }
             }}
-            keyboardType="numeric" // This restricts the keyboard to numeric input
-            maxLength={10} // Restricts the maximum length of input to 10 characters
+            keyboardType="numeric"
+            maxLength={10}
           />
           <Text style={styles.inputDetails}>Your Distric</Text>
           <View style={styles.pickerContainer}>
