@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import { firebase } from "../firebase/config";
@@ -12,75 +13,43 @@ import Accordion from "react-native-collapsible/Accordion";
 import UserEvent from "./UserEvent";
 
 const Events = () => {
-  const [name, setName] = useState({});
-  const [Venue, setVenue] = useState("");
-  const [StartTime, setStartTime] = useState("");
-  const [EndTime, setEndTime] = useState("");
-  const [District, setDistrict] = useState("");
-  const [Date, setDate] = useState("");
+  const [organizerName, setOrganizerName] = useState("");
+  const [venue, setVenue] = useState("");
+  const [date, setDate] = useState("");
+  const [district, setDistrict] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [startTime, setStartTime] = useState("");
+
+  const navigation = useNavigation();
 
   const [activeSections, setActiveSections] = useState([]);
   const [activeSections2, setActiveSections2] = useState([]);
 
-  const [userEvent, setuserEvent] = useState([]);
+  const addEvent = () => {
+    const currentUser = firebase.auth().currentUser;
 
-  const handleAddEvents = () => {
-    const userUid = firebase.auth().currentUser.uid;
-    const userDocRef = firebase.firestore().collection("users").doc(userUid);
-
-    userDocRef
-      .update({
-        event: firebase.firestore.FieldValue.arrayUnion({
-          Venue: Venue,
-          StartTime: StartTime,
-          EndTime: EndTime,
-          District: District,
-          Date: Date,
-        }),
+    firebase
+      .firestore()
+      .collection("events")
+      .add({
+        organizerName,
+        venue,
+        date,
+        district,
+        endTime,
+        startTime,
+        userId: currentUser.uid,
       })
       .then(() => {
-        console.log("Event added successfully");
-        setVenue("");
-        setStartTime("");
-        setEndTime("");
-        setDistrict("");
-        setDate("");
-        loadUserEvents();
+        console.log("Event added!");
+        navigation.goBack(); // Navigate back after adding the event
       })
       .catch((error) => {
-        console.error("Error adding Event:", error);
+        console.error("Error adding event: ", error);
       });
   };
 
-  const loadUserEvents = () => {
-    const userUid = firebase.auth().currentUser.uid;
-    const userDocRef = firebase.firestore().collection("users").doc(userUid);
 
-    userDocRef.get().then((snapshot) => {
-      if (snapshot.exists) {
-        const userData = snapshot.data();
-        if (userData.userEvent) {
-          setuserEvent(userData.userEvent);
-        }
-      } else {
-        console.log("User doesn't exist");
-      }
-    });
-  };
-
-  useEffect(() => {
-    const userUid = firebase.auth().currentUser.uid;
-    const userDocRef = firebase.firestore().collection("users").doc(userUid);
-
-    userDocRef.get().then((snapshot) => {
-      if (snapshot.exists) {
-        setName(snapshot.data());
-        loadUserEvents();
-      } else {
-        console.log("User doesn't exist");
-      }
-    });
-  }, []);
 
   const SECTIONS = [
     {
@@ -96,10 +65,17 @@ const Events = () => {
 
   const renderContent = (section) => (
     <View style={styles.content}>
-      <Text style={styles.inputDetails}>Your Blood Group</Text>
+      <Text style={styles.inputDetails}>Event Organizer</Text>
+      <TextInput
+        placeholder="Enter Event Venue"
+        style={styles.textBoxes}
+        value={organizerName}
+        onChangeText={(text) => setOrganizerName(text)}
+      />
+      <Text style={styles.inputDetails}>Location</Text>
       <View style={styles.pickerContainer}>
         <Picker
-          selectedValue={District}
+          selectedValue={district}
           onValueChange={(itemValue1) => setDistrict(itemValue1)}
           style={styles.picker}
         >
@@ -132,39 +108,39 @@ const Events = () => {
           <Picker.Item label="Kegalle" value="Kegalle" />
         </Picker>
       </View>
-      <Text style={styles.inputDetails}>Enter Event Venue</Text>
+      <Text style={styles.inputDetails}>Event Venue</Text>
       <TextInput
         placeholder="Enter Event Venue"
         style={styles.textBoxes}
-        value={Venue}
+        value={venue}
         onChangeText={(text) => setVenue(text)}
       />
 
-      <Text style={styles.inputDetails}>Enter Event Date</Text>
+      <Text style={styles.inputDetails}>Event Date</Text>
       <TextInput
         placeholder="Enter Event Date"
         style={styles.textBoxes}
-        value={Date}
+        value={date}
         onChangeText={(text) => setDate(text)}
       />
 
-      <Text style={styles.inputDetails}>Enter Event Start Time</Text>
+      <Text style={styles.inputDetails}>Event Start Time</Text>
       <TextInput
         placeholder="Enter Event Start Time"
         style={styles.textBoxes}
-        value={StartTime}
+        value={startTime}
         onChangeText={(text) => setStartTime(text)}
       />
 
-      <Text style={styles.inputDetails}>Enter Event End Time</Text>
+      <Text style={styles.inputDetails}>Event End Time</Text>
       <TextInput
         placeholder="Enter Event End Time"
         style={styles.textBoxes}
-        value={EndTime}
+        value={endTime}
         onChangeText={(text) => setEndTime(text)}
       />
 
-      <TouchableOpacity style={styles.buttonStyle2} onPress={handleAddEvents}>
+      <TouchableOpacity style={styles.buttonStyle2} onPress={addEvent}>
         <Text style={styles.buttonText2}>Submit Event Details</Text>
       </TouchableOpacity>
     </View>
