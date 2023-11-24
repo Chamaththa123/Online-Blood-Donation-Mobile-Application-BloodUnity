@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import Header from "../components/Header";
 import Accordion from "react-native-collapsible/Accordion";
 import Donar from "../components/Donar";
+import Events from "../components/Events";
 
 const Profile = () => {
   const [name, setName] = useState({});
@@ -46,9 +47,8 @@ const Profile = () => {
   );
 
   const renderContent4 = (section) => (
-    <View style={styles.content}>
-      <Text>{section.content}</Text>
-      <View style={styles.card}></View>
+    <View>
+      <Events/>
     </View>
   );
 
