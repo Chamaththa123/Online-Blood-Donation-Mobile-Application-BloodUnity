@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import { firebase } from "../firebase/config";
 import Accordion from "react-native-collapsible/Accordion";
+import UserEvent from "./UserEvent";
 
 const Events = () => {
   const [name, setName] = useState({});
@@ -181,22 +182,7 @@ const Events = () => {
     </View>
   );
 
-  const renderContent2 = (section) => (
-    <View style={styles.content}>
-      <Text style={styles.text}>
-        World Blood Donor Day is observed every year on June 14th. It's a day
-        dedicated to raising awareness about the importance of blood donation
-        and expressing gratitude to voluntary blood donors for their life-saving
-        contributions. The event serves as a reminder of the critical need for
-        safe blood and blood products and encourages more people to donate blood
-        regularly to save lives. The theme for each year's celebration often
-        focuses on specific aspects of blood donation or the importance of
-        access to safe blood. It's an opportunity to recognize the invaluable
-        contribution of blood donors worldwide and encourage others to join in
-        this noble cause.
-      </Text>
-    </View>
-  );
+  const renderContent2 = (section) => <UserEvent />;
 
   return (
     <View style={styles.cantainer}>
