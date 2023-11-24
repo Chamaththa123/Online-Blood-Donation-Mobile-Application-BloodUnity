@@ -14,12 +14,14 @@ import image3 from "../assets/image4.jpg";
 import image4 from "../assets/Image5.png";
 import image5 from "../assets/day.jpg";
 import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const HomePage = ({ route, navigation }) => {
   // const navigation = useNavigation();
 
   const [name, setName] = useState({});
   const [activeSections, setActiveSections] = useState([]);
+  const [activeSections2, setActiveSections2] = useState([]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -70,35 +72,62 @@ const HomePage = ({ route, navigation }) => {
 
   const renderContent = (section) => (
     <View style={styles.content}>
-      <Image source={image4} style={styles.image4} />
-        <Text style={styles.text2}>
-          <Text>
-            Blood donation is a selfless act that can have numerous benefits for
-            both the donor and the recipient.
-          </Text>
-
-          <Text>
-            Saving Lives: Perhaps the most significant benefit of blood donation
-            is the opportunity to save lives. Blood transfusions are crucial for
-            various medical procedures, surgeries, and for treating patients
-            with certain medical conditions such as cancer, anemia, and trauma.
-          </Text>
-
-          <Text>
-            Community Health: Blood donation contributes to the overall health
-            and well-being of the community. By donating blood, individuals help
-            ensure that an adequate and safe blood supply is available for those
-            in need.
-          </Text>
-
-          <Text>
-            Reduces the Risk of Certain Health Issues: Regular blood donation
-            may help reduce the risk of certain health issues. For example, it
-            can help lower the risk of cardiovascular diseases by reducing iron
-            levels in the body. High iron levels have been linked to an
-            increased risk of heart disease.
-          </Text>
+      <Text style={styles.text2}>
+        <Text>
+          Blood donation is a selfless act that can have numerous benefits for
+          both the donor and the recipient.
         </Text>
+
+        <Text>
+          Saving Lives: Perhaps the most significant benefit of blood donation
+          is the opportunity to save lives. Blood transfusions are crucial for
+          various medical procedures, surgeries, and for treating patients with
+          certain medical conditions such as cancer, anemia, and trauma.
+        </Text>
+
+        <Text>
+          Community Health: Blood donation contributes to the overall health and
+          well-being of the community. By donating blood, individuals help
+          ensure that an adequate and safe blood supply is available for those
+          in need.
+        </Text>
+
+        <Text>
+          Reduces the Risk of Certain Health Issues: Regular blood donation may
+          help reduce the risk of certain health issues. For example, it can
+          help lower the risk of cardiovascular diseases by reducing iron levels
+          in the body. High iron levels have been linked to an increased risk of
+          heart disease.
+        </Text>
+      </Text>
+    </View>
+  );
+  const SECTIONS2 = [
+    {
+      title: "World Blood Donar Day",
+    },
+  ];
+
+  const renderHeader2 = (section, _, isActive) => (
+    <View style={styles.headerACC}>
+      <Text style={styles.headerTextACC}>{section.title}</Text>
+    </View>
+  );
+
+  const renderContent2 = (section) => (
+    <View style={styles.content}>
+      <Text style={styles.text}>
+        World Blood Donor Day is observed every year on June 14th. It's a day
+        dedicated to raising awareness about the importance of blood donation
+        and expressing gratitude to voluntary blood donors for their life-saving
+        contributions. The event serves as a reminder of the critical need for
+        safe blood and blood products and encourages more people to donate blood
+        regularly to save lives. The theme for each year's celebration often
+        focuses on specific aspects of blood donation or the importance of
+        access to safe blood. It's an opportunity to recognize the invaluable
+        contribution of blood donors worldwide and encourage others to join in
+        this noble cause.
+      </Text>
     </View>
   );
   return (
@@ -107,7 +136,11 @@ const HomePage = ({ route, navigation }) => {
         <View style={styles.headerContainer}>
           <View style={styles.card}>
             <Text style={styles.HeaderHello}>Hello,</Text>
-            <Image source={MyImage} style={styles.image} />
+            <TouchableOpacity onPress={handleImageClick}>
+              <Text onPress={handleImageClick} style={styles.image}>
+                <Icon name="user" size={50} color="#FF1515" />
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
         <Text style={styles.Headername}>{name.name}</Text>
@@ -118,12 +151,19 @@ const HomePage = ({ route, navigation }) => {
             Find Blood Donar
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText} onPress={handleImageClick}>
-            Profile
-          </Text>
-        </TouchableOpacity>
+        <Image source={image5} style={styles.image3} />
 
+        <View style={styles.accordion}>
+          <Accordion
+            sections={SECTIONS2}
+            activeSections={activeSections2}
+            renderHeader={renderHeader2}
+            renderContent={renderContent2}
+            onChange={setActiveSections2}
+          />
+        </View>
+
+        <Image source={image4} style={styles.image4} />
         <View style={styles.accordion}>
           <Accordion
             sections={SECTIONS}
@@ -133,20 +173,6 @@ const HomePage = ({ route, navigation }) => {
             onChange={setActiveSections}
           />
         </View>
-        <Image source={image5} style={styles.image3} />
-        <Text style={styles.text}>
-          World Blood Donor Day is observed every year on June 14th. It's a day
-          dedicated to raising awareness about the importance of blood donation
-          and expressing gratitude to voluntary blood donors for their
-          life-saving contributions. The event serves as a reminder of the
-          critical need for safe blood and blood products and encourages more
-          people to donate blood regularly to save lives. The theme for each
-          year's celebration often focuses on specific aspects of blood donation
-          or the importance of access to safe blood. It's an opportunity to
-          recognize the invaluable contribution of blood donors worldwide and
-          encourage others to join in this noble cause.
-        </Text>
-        
       </View>
     </ScrollView>
   );
@@ -190,12 +216,12 @@ const styles = StyleSheet.create({
     width: 65,
     height: 65,
     position: "absolute",
-    right: 1,
+    right: -15,
     top: 0,
-    margin: 15,
+    marginTop: -35,
   },
   text: {
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 24,
   },
   text2: {
@@ -208,15 +234,18 @@ const styles = StyleSheet.create({
     borderColor: "#FF1515",
     borderRadius: 10,
     padding: 10,
+    marginBottom: 20,
   },
   image3: {
     width: "100%",
     height: "4%",
     borderRadius: 20,
+    marginTop: 20,
+    marginBottom: 20,
   },
   image4: {
     width: "100%",
-    height: "38%",
+    height: "4%",
     borderRadius: 20,
   },
   header1: {
