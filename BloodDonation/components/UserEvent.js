@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { firebase } from "../firebase/config";
+
+import MyImage from '../assets/event.jpg';
 
 const DisplayEvents = () => {
   const [userEvents, setUserEvents] = useState([]);
@@ -27,7 +29,13 @@ const DisplayEvents = () => {
     <View style={styles.container}>
       <Text style={styles.heading}>Your Events</Text>
       {userEvents.map((event) => (
-        <View key={event.id} style={styles.eventContainer}>
+        <View key={event.id} >
+         
+            <View style={styles.card}>
+            <ImageBackground source={MyImage} style={styles.cardBackground}>
+              </ImageBackground>
+            </View>
+          
           <Text>Organizer: {event.organizerName}</Text>
           <Text>Venue: {event.venue}</Text>
           <Text>Date: {event.date}</Text>
@@ -43,7 +51,6 @@ const DisplayEvents = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
   },
   heading: {
     fontSize: 20,
@@ -55,6 +62,20 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     paddingBottom: 10,
     borderBottomColor: "#CCCCCC",
+  },
+  cardBackground: {
+    width: "100%",
+    height: 220,
+    borderRadius:20 // Set the desired height of the card background image,
+  },
+  card: {
+    backgroundColor: "rgba(255, 255, 255, 0.8)", // Adjust opacity if needed
+    borderRadius: 10,
+    width:350,
+    borderRadius:50
+  },
+  detailText: {
+    // Your styles for detail text
   },
 });
 
