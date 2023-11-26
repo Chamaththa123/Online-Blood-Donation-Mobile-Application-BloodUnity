@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'; // Import useEffect from 'react'
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-import MyImage from '../assets/logo2.jpg';
+import MyImage from '../assets/logo.png';
 
 const Start = ({ route, navigation }) => {
     const handleLoginPress = () => {
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     image: {
-        width: '80%',
-        height: '50%',
+        width: '60%',
+        height: '30%',
     },
     buttonText: {
         color: '#FF2C2C',
