@@ -49,8 +49,6 @@ const Events = () => {
       });
   };
 
-
-
   const SECTIONS = [
     {
       title: "Add Your Blood Donation Event",
@@ -148,7 +146,7 @@ const Events = () => {
 
   const SECTIONS2 = [
     {
-      title: "Blood Donation Events",
+      title: "Manage Your Blood Donation Events",
     },
   ];
 

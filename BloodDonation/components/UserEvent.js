@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, ImageBackground ,Image} from "react-native";
 import { firebase } from "../firebase/config";
 
 import MyImage from '../assets/event.jpg';
@@ -27,21 +27,19 @@ const DisplayEvents = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Your Events</Text>
       {userEvents.map((event) => (
         <View key={event.id} >
          
-            <View style={styles.card}>
-            <ImageBackground source={MyImage} style={styles.cardBackground}>
-              </ImageBackground>
+            <View>
+            <Image source={MyImage} style={styles.cardBackground} />
+            <Text style={styles.organizerName}>
+            We cordially invite you to participate in our upcoming Blood Donation Drive organized by '{event.organizerName}'.
+            </Text>
+            <Text style={styles.details}><Text style={styles.bold}>Date:</Text> {event.date}</Text>
+            <Text style={styles.details}><Text style={styles.bold}>Time:</Text> {event.startTime} to {event.endTime}</Text>
+            <Text style={styles.details}><Text style={styles.bold}>Location:</Text> {event.venue}</Text>
+              {/* </Image> */}
             </View>
-          
-          <Text>Organizer: {event.organizerName}</Text>
-          <Text>Venue: {event.venue}</Text>
-          <Text>Date: {event.date}</Text>
-          <Text>District: {event.district}</Text>
-          <Text>Start Time: {event.startTime}</Text>
-          <Text>End Time: {event.endTime}</Text>
         </View>
       ))}
     </View>
@@ -65,17 +63,43 @@ const styles = StyleSheet.create({
   },
   cardBackground: {
     width: "100%",
-    height: 220,
-    borderRadius:20 // Set the desired height of the card background image,
+    height: 260,
+    borderRadius:10 ,// Set the desired height of the card background image,
+    backgroundColor: "rgba(255, 70, 70, 1)",
+    marginTop:20,
+
   },
   card: {
     backgroundColor: "rgba(255, 255, 255, 0.8)", // Adjust opacity if needed
-    borderRadius: 10,
     width:350,
-    borderRadius:50
+    borderRadius:10,
+    marginTop:10
   },
-  detailText: {
-    // Your styles for detail text
+  organizerName: {
+    textAlign:'center',
+    marginTop:-145,
+    fontWeight:'600',
+    fontSize:18,
+    margin:10,
+    color:"#FF1515",
+    fontStyle: "italic",
+
+  },
+  header: {
+    textAlign:'center',
+    color:'white',
+    marginTop:10,
+    fontWeight:'bold',
+    fontSize:22,
+    fontStyle: "italic",
+
+  },
+  details: {
+    marginBottom:5,
+    marginLeft:10,
+  },
+  bold: {
+    fontWeight:'bold'
   },
 });
 
