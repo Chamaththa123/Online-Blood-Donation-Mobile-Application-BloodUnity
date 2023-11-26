@@ -5,12 +5,13 @@ import {
   StyleSheet,
   ScrollView,
   TextInput,
-  TouchableOpacity,
+  TouchableOpacity,Image
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { firebase } from "../firebase/config";
 import { useNavigation } from "@react-navigation/native";
+import MyImage from "../assets/logo.png";
 
 const Register = () => {
   const navigation = useNavigation();
@@ -64,6 +65,8 @@ const Register = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
+      <Image source={MyImage} style={styles.image} />
+
         <Text style={styles.header}>Create New Profile</Text>
         <Text style={styles.inputDetails}>Full Name</Text>
         <TextInput
@@ -116,7 +119,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
+    justifyContent: "center",
     backgroundColor: "white",
+  },
+  image: {
+    width: "25%",
+    height: "14%",
+    alignSelf: "center",
+    marginBottom: "5%",
   },
   inputDetails: {
     fontSize: 17,
@@ -158,10 +168,10 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 25,
     fontWeight: "bold",
-    marginTop: "10%",
-    marginLeft: "5%",
+    marginTop: "5%",
     marginBottom: "8%",
     color: "#FF1515",
+    alignSelf:'center'
   },
   scrollViewContent: {
     flexGrow: 1,
