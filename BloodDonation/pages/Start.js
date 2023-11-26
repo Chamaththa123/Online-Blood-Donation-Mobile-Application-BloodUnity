@@ -40,8 +40,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     image: {
-        width: '60%',
-        height: '30%',
+        width: '40%',
+        height: '20%',
+        marginBottom:'30%',
+        marginTop:'70%'
     },
     buttonText: {
         color: '#FF2C2C',
@@ -51,10 +53,10 @@ const styles = StyleSheet.create({
     },
     buttonStyle: {
         backgroundColor: 'white',
-        padding: 13,
+        padding: 12,
         borderRadius: 10,
         width: '90%',
-        height: 60,
+        height: 50,
         margin: 10,
         marginLeft: 20,
         marginBottom: 30,
