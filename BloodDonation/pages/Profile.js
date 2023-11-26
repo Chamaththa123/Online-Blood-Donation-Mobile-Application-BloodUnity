@@ -35,7 +35,7 @@ const Profile = () => {
 
   const SECTIONS4 = [
     {
-      title: "Manage Blood Donation Events",
+      title: "Blood Donation Events",
       content: `Welcome ${name.name} ${name.number}`,
     },
   ];
