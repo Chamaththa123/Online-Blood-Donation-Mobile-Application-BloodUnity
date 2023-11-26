@@ -22,7 +22,9 @@ const AllEvents = () => {
       onPanResponderRelease: (e, gestureState) => {
         if (Math.abs(gestureState.dx) > 50) {
           const eventIndex =
-            gestureState.dx > 0 ? Math.floor(gestureState.dx / 350) : Math.ceil(gestureState.dx / 350);
+            gestureState.dx > 0
+              ? Math.floor(gestureState.dx / 350)
+              : Math.ceil(gestureState.dx / 350);
           scrollViewRef.current.scrollTo({
             x: eventIndex * 350,
             animated: true,
@@ -61,6 +63,12 @@ const AllEvents = () => {
           <ScrollView>
             <Image source={MyImage} style={styles.cardBackground} />
             <Text style={styles.district}>{event.district}</Text>
+            <Icon
+              name="thumb-tack"
+              size={30}
+              color="#FF1515"
+              style={styles.pin}
+            />
             <Text style={styles.organizerName}>
               We cordially invite you to participate in our upcoming Blood
               Donation Drive organized by '{event.organizerName}'.
@@ -89,7 +97,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     paddingBottom: 10,
     borderBottomColor: "#CCCCCC",
-    height:380,
+    height: 380,
+  },
+  pin: {
+    margin: 20,
+    marginTop: -20,
   },
   cardBackground: {
     width: "95%",
@@ -97,15 +109,15 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 70, 70, 1)",
     marginTop: 20,
     marginBottom: 10,
-    marginLeft:10,
-    margin:10,
-    borderWidth:1,
-    borderColor:'#FF1515',
-    borderRadius:10
+    marginLeft: 10,
+    margin: 10,
+    borderWidth: 1,
+    borderColor: "#FF1515",
+    borderRadius: 10,
   },
   organizerName: {
     textAlign: "center",
-    marginTop: 90,
+    marginTop: 60,
     fontWeight: "600",
     fontSize: 18,
     margin: 10,
@@ -118,13 +130,13 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: "bold",
-  }, 
+  },
   district: {
     marginTop: -255,
     fontWeight: "bold",
-    alignSelf:'flex-end',
+    alignSelf: "flex-end",
     color: "#FF1515",
-    marginRight:20
+    marginRight: 20,
   },
   delete: {
     position: "absolute",
