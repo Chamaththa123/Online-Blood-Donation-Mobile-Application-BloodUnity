@@ -53,6 +53,7 @@ const AllUsersEvents = () => {
         <View key={event.id} style={styles.eventContainer}>
           <View>
             <Image source={MyImage} style={styles.cardBackground} />
+            <Text style={styles.district}>{event.district}</Text>
             <Text style={styles.organizerName}>
               We cordially invite you to participate in our upcoming Blood
               Donation Drive organized by '{event.organizerName}'.
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   },
   organizerName: {
     textAlign: "center",
-    marginTop: -145,
+    marginTop: 90,
     fontWeight: "600",
     fontSize: 18,
     margin: 10,
@@ -121,6 +122,13 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: "bold",
+  },
+  district: {
+    marginTop: -255,
+    fontWeight: "bold",
+    alignSelf:'flex-end',
+    color: "#FF1515",
+    marginRight:20
   },
 });
 
