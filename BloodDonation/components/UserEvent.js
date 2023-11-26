@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ImageBackground ,Image} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity  ,Image} from "react-native";
 import { firebase } from "../firebase/config";
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import MyImage from '../assets/event.jpg';
 
 const DisplayEvents = () => {
@@ -38,7 +38,9 @@ const DisplayEvents = () => {
             <Text style={styles.details}><Text style={styles.bold}>Date:</Text> {event.date}</Text>
             <Text style={styles.details}><Text style={styles.bold}>Time:</Text> {event.startTime} to {event.endTime}</Text>
             <Text style={styles.details}><Text style={styles.bold}>Location:</Text> {event.venue}</Text>
-              {/* </Image> */}
+            <TouchableOpacity style={styles.delete}>
+        <Icon name="trash-o" size={30} color="red" />
+      </TouchableOpacity>
             </View>
         </View>
       ))}
@@ -100,6 +102,10 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight:'bold'
+  },
+  delete: {
+    marginLeft:'90%',
+    marginTop:-35
   },
 });
 
