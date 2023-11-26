@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   organizerName: {
     textAlign: "center",
-    marginTop: 70,
+    marginTop: 50,
     fontWeight: "600",
     fontSize: 18,
     margin: 10,
