@@ -9,6 +9,11 @@ import Profile from "./pages/Profile";
 import HomePage from "./pages/HomePage";
 import AllDonar from "./pages/AllDonar";
 import DonarDetails from "./pages/DonarDetails";
+import AllUsersEvents from "./pages/AllUsersEvents";
+import DonarDay from "./pages/DonarDay";
+import Requirements from "./pages/Requirements";
+import Benefits from "./pages/Benefits";
+
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -44,6 +49,10 @@ const App = () => {
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="AllDonar" component={AllDonar} />
       <Stack.Screen name="DonorDetails" component={DonarDetails} />
+      <Stack.Screen name="AllUsersEvents" component={AllUsersEvents} />
+      <Stack.Screen name="DonarDay" component={DonarDay} />
+      <Stack.Screen name="Requirements" component={Requirements} />
+      <Stack.Screen name="Benefits" component={Benefits} />
     </Stack.Navigator>
   );
 };
