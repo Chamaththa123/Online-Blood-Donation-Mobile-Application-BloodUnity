@@ -70,6 +70,14 @@ const DisplayEvents = () => {
         <View key={event.id}>
           <View>
             <Image source={MyImage} style={styles.cardBackground} />
+            <Text style={styles.district}>{event.district}</Text>
+
+            <Icon
+              name="thumb-tack"
+              size={30}
+              color="#FF1515"
+              style={styles.pin}
+            />
             <Text style={styles.organizerName}>
               We cordially invite you to participate in our upcoming Blood
               Donation Drive organized by '{event.organizerName}'.
@@ -100,6 +108,11 @@ const DisplayEvents = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: 20,
+  },
+  pin: {
+    margin: 20,
+    marginTop: -20,
   },
   heading: {
     fontSize: 20,
@@ -118,16 +131,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "rgba(255, 70, 70, 1)",
     marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#FF1515",
+    marginBottom: 20,
   },
-  card: {
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
-    width: 350,
-    borderRadius: 10,
-    marginTop: 10,
+  district: {
+    marginTop: -265,
+    fontWeight: "bold",
+    alignSelf: "flex-end",
+    color: "#FF1515",
+    marginRight: 20,
   },
   organizerName: {
     textAlign: "center",
-    marginTop: -145,
+    marginTop: 50,
     fontWeight: "600",
     fontSize: 18,
     margin: 10,
