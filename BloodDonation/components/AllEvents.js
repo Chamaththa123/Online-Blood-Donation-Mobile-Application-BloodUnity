@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   View,
   Text,
@@ -6,21 +6,37 @@ import {
   TouchableOpacity,
   Image,
   Alert,
+  ScrollView,
+  PanResponder,
 } from "react-native";
 import { firebase } from "../firebase/config";
 import Icon from "react-native-vector-icons/FontAwesome";
 import MyImage from "../assets/event.jpg";
 
-const DisplayEvents = () => {
+const AllEvents = () => {
   const [userEvents, setUserEvents] = useState([]);
+  const scrollViewRef = useRef(null);
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderRelease: (e, gestureState) => {
+        if (Math.abs(gestureState.dx) > 50) {
+          const eventIndex =
+            gestureState.dx > 0 ? Math.floor(gestureState.dx / 350) : Math.ceil(gestureState.dx / 350);
+          scrollViewRef.current.scrollTo({
+            x: eventIndex * 350,
+            animated: true,
+          });
+        }
+      },
+      onShouldBlockNativeResponder: () => false,
+    })
+  ).current;
 
   useEffect(() => {
-    const currentUser = firebase.auth().currentUser;
-
     const unsubscribe = firebase
       .firestore()
       .collection("events")
-      .where("userId", "==", currentUser.uid)
       .onSnapshot((snapshot) => {
         const events = [];
         snapshot.forEach((doc) => {
@@ -32,43 +48,17 @@ const DisplayEvents = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleDelete = (eventId) => {
-    Alert.alert(
-      "Confirm Deletion",
-      "Are you sure you want to delete this event?",
-      [
-        {
-          text: "Cancel",
-          style: "cancel",
-        },
-        {
-          text: "Delete",
-          onPress: () => {
-            firebase
-              .firestore()
-              .collection("events")
-              .doc(eventId)
-              .delete()
-              .then(() => {
-                setUserEvents((prevEvents) =>
-                  prevEvents.filter((event) => event.id !== eventId)
-                );
-              })
-              .catch((error) => {
-                console.error("Error removing document: ", error);
-              });
-          },
-          style: "destructive",
-        },
-      ],
-      { cancelable: true }
-    );
-  };
   return (
-    <View style={styles.container}>
+    <ScrollView
+      {...panResponder.panHandlers}
+      horizontal
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+      ref={scrollViewRef}
+    >
       {userEvents.map((event) => (
-        <View key={event.id}>
-          <View>
+        <View style={styles.eventContainer} key={event.id}>
+          <ScrollView>
             <Image source={MyImage} style={styles.cardBackground} />
             <Text style={styles.organizerName}>
               We cordially invite you to participate in our upcoming Blood
@@ -84,46 +74,30 @@ const DisplayEvents = () => {
             <Text style={styles.details}>
               <Text style={styles.bold}>Location:</Text> {event.venue}
             </Text>
-            <TouchableOpacity
-              style={styles.delete}
-              onPress={() => handleDelete(event.id)}
-            >
-              <Icon name="trash-o" size={30} color="red" />
-            </TouchableOpacity>
-          </View>
+          </ScrollView>
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  heading: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
   eventContainer: {
+    width: 390,
     marginBottom: 20,
     borderBottomWidth: 1,
     paddingBottom: 10,
     borderBottomColor: "#CCCCCC",
+    height:380,
   },
   cardBackground: {
     width: "100%",
     height: 260,
-    borderRadius: 10,
     backgroundColor: "rgba(255, 70, 70, 1)",
     marginTop: 20,
-  },
-  card: {
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
-    width: 350,
-    borderRadius: 10,
-    marginTop: 10,
+    marginBottom: 10,
+    marginLeft:-10,
+    margin:10,
   },
   organizerName: {
     textAlign: "center",
@@ -134,25 +108,18 @@ const styles = StyleSheet.create({
     color: "#FF1515",
     fontStyle: "italic",
   },
-  header: {
-    textAlign: "center",
-    color: "white",
-    marginTop: 10,
-    fontWeight: "bold",
-    fontSize: 22,
-    fontStyle: "italic",
-  },
   details: {
     marginBottom: 5,
-    marginLeft: 10,
+    marginLeft: 30,
   },
   bold: {
     fontWeight: "bold",
   },
   delete: {
-    marginLeft: "90%",
-    marginTop: -35,
+    position: "absolute",
+    top: 10,
+    right: 10,
   },
 });
 
-export default DisplayEvents;
+export default AllEvents;

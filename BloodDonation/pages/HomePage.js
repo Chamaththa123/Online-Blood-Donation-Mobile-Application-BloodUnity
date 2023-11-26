@@ -15,6 +15,7 @@ import image4 from "../assets/Image5.png";
 import image5 from "../assets/day.jpg";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import AllEvents from "../components/AllEvents";
 
 const HomePage = ({ route, navigation }) => {
   // const navigation = useNavigation();
@@ -151,6 +152,11 @@ const HomePage = ({ route, navigation }) => {
             Find Blood Donar
           </Text>
         </TouchableOpacity>
+
+        <Text style={styles.header2}>Blood Donation Events</Text>
+
+        <AllEvents/>
+
         <Image source={image5} style={styles.image3} />
 
         <View style={styles.accordion}>
@@ -162,6 +168,8 @@ const HomePage = ({ route, navigation }) => {
             onChange={setActiveSections2}
           />
         </View>
+
+        
 
         <Image source={image4} style={styles.image4} />
         <View style={styles.accordion}>
@@ -251,6 +259,11 @@ const styles = StyleSheet.create({
   header1: {
     fontSize: 25,
     margin: 10,
+    marginTop: 30,
+    color: "#FF1515",
+  },
+  header2: {
+    fontSize: 20,
     marginTop: 30,
     color: "#FF1515",
   },
