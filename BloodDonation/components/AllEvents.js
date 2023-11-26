@@ -60,12 +60,13 @@ const AllEvents = () => {
         <View style={styles.eventContainer} key={event.id}>
           <ScrollView>
             <Image source={MyImage} style={styles.cardBackground} />
+            <Text style={styles.district}>{event.district}</Text>
             <Text style={styles.organizerName}>
               We cordially invite you to participate in our upcoming Blood
               Donation Drive organized by '{event.organizerName}'.
             </Text>
             <Text style={styles.details}>
-              <Text style={styles.bold}>Date:</Text> {event.date}
+              <Text style={styles.bold}>Date:</Text> {event.district}
             </Text>
             <Text style={styles.details}>
               <Text style={styles.bold}>Time:</Text> {event.startTime} to{" "}
@@ -91,17 +92,20 @@ const styles = StyleSheet.create({
     height:380,
   },
   cardBackground: {
-    width: "100%",
+    width: "95%",
     height: 260,
     backgroundColor: "rgba(255, 70, 70, 1)",
     marginTop: 20,
     marginBottom: 10,
-    marginLeft:-10,
+    marginLeft:10,
     margin:10,
+    borderWidth:1,
+    borderColor:'#FF1515',
+    borderRadius:10
   },
   organizerName: {
     textAlign: "center",
-    marginTop: -145,
+    marginTop: 90,
     fontWeight: "600",
     fontSize: 18,
     margin: 10,
@@ -114,6 +118,13 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: "bold",
+  }, 
+  district: {
+    marginTop: -255,
+    fontWeight: "bold",
+    alignSelf:'flex-end',
+    color: "#FF1515",
+    marginRight:20
   },
   delete: {
     position: "absolute",
