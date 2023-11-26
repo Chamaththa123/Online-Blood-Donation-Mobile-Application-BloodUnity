@@ -11,7 +11,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { firebase } from "../firebase/config";
 import Icon from "react-native-vector-icons/FontAwesome";
-import MyImage from "../assets/banner.jpg";
+import MyImage from "../assets/logo.png";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -46,7 +46,9 @@ const Login = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container1}>
-      <Text style={styles.header2}>Welcome Back !</Text>
+      <Image source={MyImage} style={styles.image} />
+
+      <Text style={styles.header2}>Welcome to Blood Unity !</Text>
       <Text style={styles.header1}>Sign In</Text>
       <Text style={styles.inputDetails}>Email</Text>
       <TextInput
@@ -97,16 +99,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
+  image: {
+    width: "25%",
+    height: "14%",
+    alignSelf: "center",
+    marginBottom: "15%",
+  },
   container1: {
     flexGrow: 1, // Allows the content to expand within the ScrollView
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "left",
-  },
-  image: {
-    width: 400,
-    height: 200,
-    alignItems: "center",
   },
   buttonText: {
     color: "white",
@@ -155,18 +158,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   header1: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: "bold",
     marginLeft: "5%",
     marginBottom: "7%",
     color: "#FF1515",
+    alignSelf: "center",
   },
   header2: {
-    fontSize: 31,
+    fontSize: 28,
     fontWeight: "bold",
     marginLeft: "5%",
     marginBottom: "2%",
     color: "#FF1515",
+    alignSelf: "center",
   },
   show: {
     textAlign: "left",
