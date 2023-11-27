@@ -19,7 +19,7 @@ const DonorDetails = ({ route }) => {
     navigation.setOptions({
       headerTitleStyle: {
         fontWeight: "bold",
-        color: "#FF1515",
+        color: "#FF1515"
       },
       headerTintColor: "#FF1515",
       headerShown: true,
