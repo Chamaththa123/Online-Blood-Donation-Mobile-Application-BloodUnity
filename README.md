@@ -38,3 +38,17 @@ BloodUnity is a React Native mobile application built to facilitate online blood
 <li>Accessible articles within the app such as World Blood Donor Day, blood donation requirements, and benefits of blood donation.</li>
 </ul>
 
+# Technologies Used
+
+<ul>
+<li>React Native</li>
+<li>Firebase (for authentication and data storage)</li>
+</ul>
+
+# Getting Started
+1. Clone this repository. : `gh repo clone Chamaththa123/Online-Blood-Donation-Mobile-Application-BloodUnity`<br>
+2. Install the necessary dependencies using `npm install` in `BloodDonation`  directory.<br>
+3. Set up Firebase configuration in the project.
+4. Start the  React-Native app using `npm start` in the `BloodDonation` directory.
+
+
