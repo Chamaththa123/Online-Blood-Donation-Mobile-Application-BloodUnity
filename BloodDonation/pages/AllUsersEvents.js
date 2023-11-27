@@ -16,7 +16,7 @@ import { Picker } from "@react-native-picker/picker";
 
 const AllUsersEvents = () => {
   const [userEvents, setUserEvents] = useState([]);
-  const [selectedDistrict, setSelectedDistrict] = useState(""); // State to hold selected district
+  const [selectedDistrict, setSelectedDistrict] = useState("");
 
   const navigation = useNavigation();
 
