@@ -71,7 +71,6 @@ const DisplayEvents = () => {
           <View>
             <Image source={MyImage} style={styles.cardBackground} />
             <Text style={styles.district}>{event.district}</Text>
-
             <Icon
               name="thumb-tack"
               size={30}
