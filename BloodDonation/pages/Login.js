@@ -47,7 +47,6 @@ const Login = () => {
   return (
     <ScrollView contentContainerStyle={styles.container1}>
       <Image source={MyImage} style={styles.image} />
-
       <Text style={styles.header2}>Welcome to Blood Unity !</Text>
       <Text style={styles.header1}>Sign In</Text>
       <Text style={styles.inputDetails}>Email</Text>
