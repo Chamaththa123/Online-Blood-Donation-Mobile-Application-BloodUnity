@@ -42,7 +42,7 @@ const Events = () => {
       })
       .then(() => {
         console.log("Event added!");
-        navigation.goBack(); // Navigate back after adding the event
+        navigation.goBack(); 
       })
       .catch((error) => {
         console.error("Error adding event: ", error);
