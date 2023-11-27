@@ -33,7 +33,7 @@ BloodUnity is a React Native mobile application built to facilitate online blood
 <li>All users can view details of added events and filter them by district.</li>
 </ul>
 
-6. Informative Articles
+6. <b>Informative Articles</b>
 <ul>
 <li>Accessible articles within the app such as World Blood Donor Day, blood donation requirements, and benefits of blood donation.</li>
 </ul>
