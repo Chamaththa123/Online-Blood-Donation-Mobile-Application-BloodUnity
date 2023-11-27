@@ -8,19 +8,15 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import Accordion from "react-native-collapsible/Accordion";
 import MyImage from "../assets/profile.png";
 import image3 from "../assets/image4.jpg";
 import image4 from "../assets/Image5.png";
 import image5 from "../assets/day.jpg";
 import image6 from "../assets/camp.jpeg";
-import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import AllEvents from "../components/AllEvents";
 
 const HomePage = ({ route, navigation }) => {
-  // const navigation = useNavigation();
-
   const [name, setName] = useState({});
 
   useEffect(() => {
@@ -69,7 +65,6 @@ const HomePage = ({ route, navigation }) => {
     navigation.navigate("Benefits");
   };
 
-  
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
@@ -91,11 +86,8 @@ const HomePage = ({ route, navigation }) => {
             Find Blood Donar
           </Text>
         </TouchableOpacity>
-
         <Text style={styles.header2}>Blood Donation Events</Text>
-
-        <AllEvents/>
-
+        <AllEvents />
         <TouchableOpacity style={styles.buttonStyle}>
           <Text style={styles.buttonText} onPress={AllUsersEvents}>
             See All Events
@@ -106,14 +98,14 @@ const HomePage = ({ route, navigation }) => {
 
         <TouchableOpacity style={styles.buttonStyle}>
           <Text style={styles.buttonText} onPress={DonarDay}>
-          World Blood Donar Day
+            World Blood Donar Day
           </Text>
         </TouchableOpacity>
 
         <Image source={image6} style={styles.image6} />
         <TouchableOpacity style={styles.buttonStyle}>
           <Text style={styles.buttonText} onPress={Requirements}>
-          Requirements for Donors
+            Requirements for Donors
           </Text>
         </TouchableOpacity>
 
