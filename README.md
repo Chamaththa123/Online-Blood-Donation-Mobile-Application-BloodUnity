@@ -51,4 +51,3 @@ BloodUnity is a React Native mobile application built to facilitate online blood
 3. Set up Firebase configuration in the project.
 4. Start the  React-Native app using `npm start` in the `BloodDonation` directory.
 
-<img src='[https://firebasestorage.googleapis.com/v0/b/test-reactnative-9bda1.appspot.com/o/1.PNG?alt=media&token=b324a49c-14ea-4dd1-808e-9ddba00eb9d8](https://firebasestorage.googleapis.com/v0/b/blood-donation-ac142.appspot.com/o/Screenshot_20231127-123241_Expo%20Go.jpg?alt=media&token=43417de3-c5bf-41bb-b903-8dd5c94cd139)https://firebasestorage.googleapis.com/v0/b/blood-donation-ac142.appspot.com/o/Screenshot_20231127-123241_Expo%20Go.jpg?alt=media&token=43417de3-c5bf-41bb-b903-8dd5c94cd139'>
