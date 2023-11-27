@@ -68,5 +68,4 @@ BloodUnity is a React Native mobile application built to facilitate online blood
   <img src="https://firebasestorage.googleapis.com/v0/b/blood-donation-ac142.appspot.com/o/Screenshot_20231127-143418_Expo%20Go.jpg?alt=media&token=c7ed4b46-0f74-4d40-a4dc-4a4b267e40e3" width="200"  height='400'>
   <img src="https://firebasestorage.googleapis.com/v0/b/blood-donation-ac142.appspot.com/o/Screenshot_20231127-143423_Expo%20Go.jpg?alt=media&token=50350a8a-0d5e-4fe0-8103-44741696e986" width="200"  height='400'>
   <img src="https://firebasestorage.googleapis.com/v0/b/blood-donation-ac142.appspot.com/o/Screenshot_20231127-143430_Expo%20Go.jpg?alt=media&token=d4b55545-da10-4f1b-baf3-e45ca6fc71b1" width="200"  height='400'>
-  <img src="https://console.firebase.google.com/u/0/project/blood-donation-ac142/storage/blood-donation-ac142.appspot.com/files" width="200"  height='400'>
 </div>
