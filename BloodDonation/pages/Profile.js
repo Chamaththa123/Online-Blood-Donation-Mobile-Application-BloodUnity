@@ -18,7 +18,6 @@ const Profile = () => {
   const [activeSections2, setActiveSections2] = useState([]);
   const [activeSections4, setActiveSections4] = useState([]);
 
-
   const SECTIONS2 = [
     {
       title: "Become a Blood Donar",
@@ -48,7 +47,7 @@ const Profile = () => {
 
   const renderContent4 = (section) => (
     <View>
-      <Events/>
+      <Events />
     </View>
   );
 
