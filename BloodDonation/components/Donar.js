@@ -256,7 +256,6 @@ const Donar = () => {
             value={area}
             onChangeText={(text) => setarea(text)}
           />
-
           <TouchableOpacity
             style={styles.buttonStyle2}
             onPress={handleAddMarks}
