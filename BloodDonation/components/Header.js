@@ -11,7 +11,7 @@ import { firebase } from "../firebase/config";
 import { useNavigation } from "@react-navigation/native";
 import MyImage from "../assets/profile.png";
 
-const Header = ({ title }) => {
+const Header = () => {
   const [name, setName] = useState({});
   const navigation = useNavigation();
 
