@@ -83,7 +83,6 @@ const Register = () => {
           autoCapitalize="none"
           autoCorrect={false}
         />
-
         <Text style={styles.inputDetails}>Password</Text>
         <TextInput
           placeholder="Enter Password"
